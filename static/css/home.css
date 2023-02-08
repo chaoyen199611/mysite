@@ -32,7 +32,7 @@ p {
 }
 .about-me {
   padding-top: 5%;
-  width: 50vw;
+  width: 60vw;
 }
 
 .social-img{
@@ -85,6 +85,7 @@ p {
 .latest{
   text-align: center;
   color: aliceblue;
+  width: 60vw;
 }
 .card  {
   color: black;
@@ -95,6 +96,8 @@ p {
   border-style: solid;
   border-color: white;
   border-radius: 5%;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .card-list{
@@ -156,10 +159,12 @@ p span{
 
 .row{
   display: flex;
+  justify-content: center;
 }
 
 .column{
-  flex:50%
+  flex:50%;
+
 }
 .card-image{
   object-fit: cover;
@@ -184,7 +189,7 @@ p span{
 }
 
 .card:hover .card-desc {
-    opacity: 0.8;
+    opacity: 0.9;
     height: 35vh;
     
 
