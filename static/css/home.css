@@ -4,11 +4,17 @@ html,body{
     margin:0;
 }
 
-section{
+section {
   min-height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+#two{
+  background-color: none;
+  background-image: url('https://raw.githubusercontent.com/hosseinnabi-ir/Responsive-Glass-Sidebar-using-CSS-and-JavaScript/Main/images/bg.jpg');
+  background-size: cover;
 }
 
 p {
@@ -91,7 +97,9 @@ p {
   }
 
 .latest{
+  display: flex;
   text-align: center;
+  justify-content: center;
   color: aliceblue;
   width: 60vw;
 }
@@ -104,13 +112,37 @@ p {
   border-style: solid;
   border-color: white;
   border-radius: 5%;
-  margin-left: auto;
-  margin-right: auto;
+  float: right;
+}
+
+.sidebar{
+  width: 20%;
+  border-style: solid;
+  border-color: white;
+  border-radius: 5%;
+  height: 40%;
+  margin-top: 5%;
+}
+
+.sidebar a{
+  display:block;
+  color: white;
+  padding: 16px;
+  text-decoration: none;
+}
+.sidebar a.active {
+  background-color: #04AA6D;
+  color: white;
+}
+
+.sidebar a:hover:not(.active) {
+  background-color: red;
+  color: white;
 }
 
 .card-list{
   align-items: center;
-  margin-top: 2%;
+  width: 80%
 }
 
 .card-content{
@@ -172,7 +204,6 @@ p span{
 
 .column{
   flex:50%;
-
 }
 .card-image{
   object-fit: cover;
