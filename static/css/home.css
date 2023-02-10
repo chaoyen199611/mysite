@@ -26,18 +26,25 @@ p {
   justify-content: center;
 }
 
-.nav-bar, p{
+.nav-bar, p,h2{
     color: aliceblue;
     font-family: "Gill Sans", sans-serif;
 }
-.about-me {
+.about-me{
   padding-top: 5%;
   width: 60vw;
+}
+.contact-container {
+  display: flex;
+  width: 60vw;
+}
+
+.social{
+  margin-top: 2%;
 }
 
 .social-img{
     float: right;
-    width:  2em;
     height: 2em;
     margin-right: 0.5em;
     object-fit: cover;
@@ -63,6 +70,7 @@ p {
     position: relative;
     transition: 0.5s;
   }
+
   
   .button span:after {
     content: '\00bb';
@@ -193,6 +201,26 @@ p span{
     height: 35vh;
     
 
+}
+
+.contact-info{
+  flex: 60%;
+}
+
+.contact-info p{
+  margin-top: 5%;
+  margin-bottom: 5%;
+}
+
+.email-block{
+  padding-left: 5%;
+  padding-right: 5%;
+  flex: 40%;
+  border-left: 0.1rem solid aliceblue;
+}
+
+.discord-link{
+  width: 40%;
 }
 
 footer {
