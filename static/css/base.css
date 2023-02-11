@@ -1,0 +1,52 @@
+html,body{
+    background-color: black;
+    margin:0;
+}
+
+section {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+p {
+    margin: 0;
+  }
+
+.nav-bar, p,h2{
+    color: aliceblue;
+    font-family: "Gill Sans", sans-serif;
+}
+
+.contact-container {
+    display: flex;
+    width: 60vw;
+}
+
+.contact-info{
+    flex: 60%;
+}
+
+.contact-info p{
+    margin-top: 5%;
+    margin-bottom: 5%;
+}
+
+.email-block{
+    padding-left: 5%;
+    padding-right: 5%;
+    flex: 40%;
+    border-left: 0.1rem solid aliceblue;
+}
+
+.discord-link{
+    width: 40%;
+}
+
+footer {
+    display: flex;
+    justify-content: center;
+    padding: 5vh;
+    color: #fff;
+}
