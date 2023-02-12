@@ -10,8 +10,9 @@ p {
 
 
 .profile-image{
-    margin-left: auto;
-    margin-right: auto;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .intro{
@@ -207,6 +208,7 @@ p span{
     border-radius: 5%;
     z-index: 10;
     height: 35vh;
+    overflow: hidden;
 }
 
 .card:hover .card-desc {
