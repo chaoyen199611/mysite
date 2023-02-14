@@ -49,9 +49,21 @@
                             <div class="title">
                                 <p><span>{{ post.title }}</span></p>
                             </div>
-                            <div class="location">
-                                <p><span>{{ post.location }}, {{ post.country }}</span></p>
-                            </div>
+                            {% if post.category == "Travel" %}
+                                <div class="location">
+                                    <p><span>{{ post.location }}, {{ post.country }}</span></p>
+                                </div>
+                            {% elif post.category == "Photo" %}
+                                <div class="camera">
+                                    <p><span>{{ post.camera }}</span></p>
+                                </div>
+                            {% elif post.category == "Blog" %}
+                            {% else %}
+                                <div class="project-card-content">
+                                    <p><span>{{ post.topic }}</span></p>
+                                </div>
+                            {% endif %}
+                            
                             <div class="update-time">
                                 <p><span>{{ post.post_time }}</span></p>
                             </div>
@@ -75,9 +87,21 @@
                             <div class="title">
                                 <p><span>{{ post.title }}</span></p>
                             </div>
-                            <div class="location">
-                                <p><span>{{ post.location }}, {{ post.country }}</span></p>
-                            </div>
+                            {% if post.category == "Travel" %}
+                                <div class="location">
+                                    <p><span>{{ post.location }}, {{ post.country }}</span></p>
+                                </div>
+                            {% elif post.category == "Photo" %}
+                                <div class="camera">
+                                    <p><span>{{ post.camera }}</span></p>
+                                </div>
+                            {% elif post.category == "Project" %}
+                                <div class="project-card-content">
+                                    <p><span>{{ post.topic }}</span></p>
+                                </div>
+                            {% elif post.category == "Blog" %}
+                            {% else %}
+                            {% endif %}
                             <div class="update-time">
                                 <p><span>{{ post.post_time }}</span></p>
                             </div>
