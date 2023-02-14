@@ -35,59 +35,56 @@
         </div>
         <div class="card-list">
             <div class="row">
+                {% for post in post1s|slice:"0:2" %}
                 <div class="column">
                     <div class="card">
                         <div class="category">
                             <div class="category-tag">
-                                Travel
+                                {{ post.category }}
                             </div>
                         </div>
-                        <img src="{% static 'img/IMG_4612.jpeg' %}" class="card-image">
-                        <p class="card-desc">Pinnipeds, commonly known as seals,[a] are 
-                            a widely distributed and diverse clade of carnivorous, fin-footed, 
-                            semiaquatic marine mammals. They comprise the extant families Odobenidae (
-                                whose only living member is the walrus), Otariidae (the eared seals: 
-                                sea lions and fur seals), and Phocidae (the earless seals, or true seals).</p>
+                        <img src="{{ post.thumbnail.url }}" class="card-image">
+                        <p class="card-desc">{{ post.description }}</p>
                         <div class="card-content">
                             <div class="title">
-                                <p><span>2023 APSCON</span></p>
+                                <p><span>{{ post.title }}</span></p>
                             </div>
                             <div class="location">
-                                <p><span>Bengaluru, India</span></p>
+                                <p><span>{{ post.location }}, {{ post.country }}</span></p>
                             </div>
                             <div class="update-time">
-                                <p><span>Jan, 2023</span></p>
+                                <p><span>{{ post.post_time }}</span></p>
                             </div>
                         </div>
                     </div>
-                    
                 </div>
-                <div class="column">
-                    <div class="card">
-                        <div class="content">
-                        
-                        </div>
-                        <div class="flap"></div>
-                    </div>
-                </div>
+                {% endfor %}
             </div>
             <div class="row">
+                {% for post in post1s|slice:"2:4" %}
                 <div class="column">
                     <div class="card">
-                        <div class="content">
-                        
+                        <div class="category">
+                            <div class="category-tag">
+                                {{ post.category }}
+                            </div>
                         </div>
-                        <div class="flap"></div>
+                        <img src="{{ post.thumbnail.url }}" class="card-image">
+                        <p class="card-desc">{{ post.description }}</p>
+                        <div class="card-content">
+                            <div class="title">
+                                <p><span>{{ post.title }}</span></p>
+                            </div>
+                            <div class="location">
+                                <p><span>{{ post.location }}, {{ post.country }}</span></p>
+                            </div>
+                            <div class="update-time">
+                                <p><span>{{ post.post_time }}</span></p>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <div class="column">
-                    <div class="card">
-                        <div class="content">
-                        
-                        </div>
-                        <div class="flap"></div>
-                    </div>
-                </div>
+                {% endfor %}
             </div>
         </div>
     </div>
