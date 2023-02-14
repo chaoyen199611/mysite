@@ -145,13 +145,28 @@ p {
 
 }
 
-.category{
+.category-pr, .category-b, .category-p, .category-t{
   top: 5%;
   left: 5%;
   height: 25px;
-  background-color: green;
   position: absolute;
   border-style: solid;
+}
+
+.category-b{
+  background-color: aqua;
+}
+
+.category-p{
+  background-color: purple;
+}
+
+.category-t{
+  background-color: green;
+}
+
+.category-pr{
+  background-color: orange;
 }
 
 .category-tag{

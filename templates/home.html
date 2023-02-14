@@ -38,11 +38,31 @@
                 {% for post in posts1 %}
                 <div class="column">
                     <div class="card">
-                        <div class="category">
-                            <div class="category-tag">
-                                {{ post.category }}
+                        {% if post.category == "Travel" %}
+                            <div class="category-t">
+                                <div class="category-tag">
+                                    {{ post.category }}
+                                </div>
                             </div>
-                        </div>
+                        {% elif post.category == "Photo" %}
+                            <div class="category-p">
+                                <div class="category-tag">
+                                    {{ post.category }}
+                                </div>
+                            </div>
+                        {% elif post.category == "Blog" %}
+                            <div class="category-b">
+                                <div class="category-tag">
+                                    {{ post.category }}
+                                </div>
+                            </div>
+                        {% else %}
+                            <div class="category-pr">
+                                <div class="category-tag">
+                                    {{ post.category }}
+                                </div>
+                            </div>
+                        {% endif %}
                         <img src="{{ post.thumbnail.url }}" class="card-image">
                         <p class="card-desc">{{ post.description }}</p>
                         <div class="card-content">
@@ -76,11 +96,31 @@
                 {% for post in posts2 %}
                 <div class="column">
                     <div class="card">
-                        <div class="category">
-                            <div class="category-tag">
-                                {{ post.category }}
+                        {% if post.category == "Travel" %}
+                            <div class="category-t">
+                                <div class="category-tag">
+                                    {{ post.category }}
+                                </div>
                             </div>
-                        </div>
+                        {% elif post.category == "Photo" %}
+                            <div class="category-p">
+                                <div class="category-tag">
+                                    {{ post.category }}
+                                </div>
+                            </div>
+                        {% elif post.category == "Blog" %}
+                            <div class="category-b">
+                                <div class="category-tag">
+                                    {{ post.category }}
+                                </div>
+                            </div>
+                        {% else %}
+                            <div class="category-pr">
+                                <div class="category-tag">
+                                    {{ post.category }}
+                                </div>
+                            </div>
+                        {% endif %}
                         <img src="{{ post.thumbnail.url }}" class="card-image">
                         <p class="card-desc">{{ post.description }}</p>
                         <div class="card-content">
