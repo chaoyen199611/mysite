@@ -15,3 +15,4 @@ class PostBase(models.Model):
     category = models.CharField(max_length=2,choices=CATETORIES)
     description = models.CharField(max_length=100)
     post_time = models.DateTimeField(auto_now_add=True)
+    thumbnail = models.ImageField(null=True,blank=True,upload_to="images/")

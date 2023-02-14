@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from django.views.generic.base import TemplateView
+from .models import PostBase
 
 
 class HomePageView(TemplateView):
@@ -8,4 +9,5 @@ class HomePageView(TemplateView):
     
     def get_context_data(self, *args,**kwargs):
             context=super().get_context_data(*args,**kwargs)
+            context['posts']=PostBase.objects.all()
             return context
