@@ -9,4 +9,4 @@ class ProjectPost(PostBase):
         ("3D Art","3D Art"),
     )
     field = models.CharField(max_length=20,choices=Field)
-    just_test = models.CharField(null=True,max_length=100)
+    just_test = models.CharField(null=True,blank=True,max_length=100)
