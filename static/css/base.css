@@ -14,9 +14,20 @@ p {
     margin: 0;
   }
 
-.nav-bar, p,h2{
+.navbar-nav,p,h2{
     color: aliceblue;
     font-family: "Gill Sans", sans-serif;
+}
+
+.navbar-nav{
+    color : green;
+}
+
+
+.navbar-nav > li:hover {
+    background-color: lightskyblue;
+    border-radius: 30px;
+    color: black;
 }
 
 .contact-container {
