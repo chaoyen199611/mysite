@@ -21,24 +21,11 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navbarScroll">
                     <ul class="navbar-nav mx-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: auto;">
-                        <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="{% url 'home-page' %}">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="{% url 'project-home' %}">Projects</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Reviews</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="{% url 'travel-page' %}">Travel</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="{% url 'photo-page' %}">Photographs</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Link</a>
-                        </li>
+                        <li class="active"><a href="{% url 'home-page' %}">Home</a></li>
+                        <li><a  href="{% url 'project-home' %}">Projects</a></li>
+                        <li><a  href="#">Reviews</a></li>
+                        <li><a  href="{% url 'travel-page' %}">Travel</a></li>
+                        <li><a  href="{% url 'photo-page' %}">Photographs</a></li>
                     </ul>
                 </div>
             </div>

@@ -1,4 +1,4 @@
-$(".navbar-nav a").on("click", function(){
-    $(".navbar-nav").find("li.active").removeClass("active");
-    $(this).parent('li').addClass("active");
- });
+$(".navbar-nav .nav-item a").on("click", function(){
+    $(".nav-item").find(".active").removeClass("active");
+    $(this).parent('a').addClass("active");
+});
