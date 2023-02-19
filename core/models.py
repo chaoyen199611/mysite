@@ -16,3 +16,6 @@ class PostBase(models.Model):
     description = models.CharField(max_length=100)
     post_time = models.DateField()
     thumbnail = models.ImageField(null=True,blank=True,upload_to="images/")
+
+
+

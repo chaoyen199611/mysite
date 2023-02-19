@@ -26,6 +26,11 @@ p,h2{
     margin-right: 2%;
 }
 
+.navbar-nav{
+    display: flex;
+    justify-content: center;
+}
+
 .navbar-nav > li:hover {
     background-color: lightskyblue;
     border-radius: 30px;

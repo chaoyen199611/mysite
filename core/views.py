@@ -12,9 +12,10 @@ class HomePageView(TemplateView):
     template_name="home.html"
 
     def get_context_data(self, *args,**kwargs):
-            self.latest_post_num=4
+
             context=super().get_context_data(*args,**kwargs)
-            latest_post=PostBase.objects.values_list('id','category')[:self.latest_post_num]
+            latest_post=PostBase.objects.values_list('id','category').order_by('-id')[:4]
+            print(latest_post)
             latest_post=list(latest_post)
             final1 = PostBase.objects.none()
             final2 = PostBase.objects.none()
