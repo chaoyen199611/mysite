@@ -1,0 +1,17 @@
+.project-box{
+    background-color: yellow;
+    margin-top: 3%;
+}
+
+.project-list{
+    width: 60vw;
+}
+
+.project-container{
+    display:flex;
+    justify-content: center;
+}
+a{
+    text-decoration: none;
+    color: aliceblue;
+}

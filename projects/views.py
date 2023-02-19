@@ -6,9 +6,11 @@ from .models import ProjectPost,ProjectPostSection
 class ProjectPageView(TemplateView):
 
     template_name="projects.html"
-
+    
     def get_context_data(self, *args,**kwargs):
         context=super().get_context_data(*args,**kwargs)
+
+        context['projects'] = ProjectPost.objects.all()
         return context
     
 class ProjectDetailView(TemplateView):

@@ -8,13 +8,16 @@
 <div class="projectcontainer">
     <div class="project">
         <h2>{{ projectMain.title }}</h2>
-
+        <div class="project-desc">{{ projectMain.description }}</div>
         {% for section in sections %}
         <h3>{{ section.section_title }}</h3>
+        <hr>
+        {% if section.section_image.url != "null" %}
+            <img src="{{ section.section_image.url }}" class="section-image">
+        {% endif %}
+        <div class="project-text">{{ section.section_context }}</div>
 
-        <p>{{ section.section_context }}</p>
-
-        <tr>
+        
         {% endfor %}
 
     </div>
