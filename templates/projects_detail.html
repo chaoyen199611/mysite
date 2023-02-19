@@ -1,5 +1,22 @@
 {% extends "base.html" %}
+{% load static %}
+{% block projectdetail_style %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/projectdetail.css' %}">
+{% endblock %}
 
 {% block projectdetail %}
-<p>{{ projectMain.title }}</p>
+<div class="projectcontainer">
+    <div class="project">
+        <h2>{{ projectMain.title }}</h2>
+
+        {% for section in sections %}
+        <h3>{{ section.section_title }}</h3>
+
+        <p>{{ section.section_context }}</p>
+
+        <tr>
+        {% endfor %}
+
+    </div>
+</div>
 {% endblock %}
