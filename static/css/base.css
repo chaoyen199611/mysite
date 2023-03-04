@@ -32,13 +32,13 @@ p,h2,h3{
 }
 
 .navbar-nav > li:hover {
-    background-color: lightskyblue;
+    background-color: #53ca32;
     border-radius: 30px;
     color: black;
 }
 
 .active{
-    background-color: green;
+    background-color: #53ca32;
     border-radius: 30px;
 }
 
