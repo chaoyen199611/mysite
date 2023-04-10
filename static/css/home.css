@@ -1,6 +1,11 @@
 #two{
-  background-color: none;
+  background-color: #f6f2e7;
+  display: block;
 
+}
+
+#two-h2{
+  color: black;
 }
 
 p {
@@ -78,7 +83,7 @@ p {
   }
 
 .latest{
-  display: flex;
+  display: block;
   text-align: center;
   justify-content: center;
   color: aliceblue;
@@ -99,8 +104,8 @@ p {
 .sidebar{
   width: 20%;
   border-style: solid;
-  border-color: white;
-  border-radius: 10%;
+  border-color: black;
+  border-radius: 20px;
   height: 40%;
   margin-top: 5%;
   overflow: hidden;
@@ -108,23 +113,23 @@ p {
 
 .sidebar a{
   display:block;
-  color: white;
+  color: black;
   padding: 5%;
   text-decoration: none;
 }
 .sidebar a.active {
   background-color: #04AA6D;
-  color: white;
+  color: black;
 }
 
 .sidebar a:hover:not(.active) {
-  background-color: white;
-  color: black;
+  background-color: black;
+  color: white;
 }
 
 .card-list{
   align-items: center;
-  width: 80%
+  width: 80vw;
 }
 
 .card-content{
@@ -188,16 +193,6 @@ p span{
   font-size: 1rem;
 }
 
-
-
-.row{
-  display: flex;
-  justify-content: center;
-}
-
-.column{
-  flex:50%;
-}
 .card-image{
   object-fit: cover;
   height: 35vh;

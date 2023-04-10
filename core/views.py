@@ -13,28 +13,26 @@ class HomePageView(TemplateView):
 
     def get_context_data(self, *args,**kwargs):
 
-            context=super().get_context_data(*args,**kwargs)
-            latest_post=PostBase.objects.values_list('id','category').order_by('-id')[:4]
-            print(latest_post)
-            latest_post=list(latest_post)
-            final1 = PostBase.objects.none()
-            final2 = PostBase.objects.none()
-            for i in range(len(latest_post)):
-                latest_post_id=latest_post[i][0]
-                latest_post_category=latest_post[i][1]
-                if latest_post_category == "Blog":
-                        tmp=BlogPost.objects.filter(id=latest_post_id)
-                elif latest_post_category == "Travel":
-                        tmp=TravelPost.objects.filter(id=latest_post_id)
-                elif latest_post_category == "Project":
-                        tmp=ProjectPost.objects.filter(id=latest_post_id)
-                elif latest_post_category == "Photo":
-                        tmp=PhotoPost.objects.filter(id=latest_post_id)
+                context=super().get_context_data(*args,**kwargs)
+                latest_post=PostBase.objects.values_list('id','category').order_by('-id')[:4]
                 
-                if i>=2:
-                    final2=final2.union(final2,tmp)
-                else:
-                    final1=final1.union(final1,tmp)
-            context['posts1']=final1
-            context['posts2']=final2
-            return context
+                latest_post=list(latest_post)
+                latest_post.reverse()
+
+                final = PostBase.objects.none()
+                for i in range(len(latest_post)):
+                        latest_post_id=latest_post[i][0]
+                        latest_post_category=latest_post[i][1]
+                        if latest_post_category == "Blog":
+                                tmp=BlogPost.objects.filter(id=latest_post_id)
+                        elif latest_post_category == "Travel":
+                                tmp=TravelPost.objects.filter(id=latest_post_id)
+                        elif latest_post_category == "Project":
+                                tmp=ProjectPost.objects.filter(id=latest_post_id)
+                        elif latest_post_category == "Photo":
+                                tmp=PhotoPost.objects.filter(id=latest_post_id)
+                        
+
+                        final=final.union(tmp)
+                context['posts']=final
+                return context

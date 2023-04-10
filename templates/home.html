@@ -23,8 +23,9 @@
         </div>
     </div>
 </section>
-<h2 style="text-align: center;">Latest Post</h2>
+
 <section id="two">
+    <h2 style="text-align: center;" id="two-h2">Latest Post</h2>
     <div class="latest">
         <div class="sidebar">
             <a href="#" class="w3-bar-item w3-button">All</a>
@@ -34,122 +35,60 @@
             <a href="#" class="w3-bar-item w3-button">Reviews</a>
         </div>
         <div class="card-list">
-            <div class="row">
-                {% for post in posts1 %}
-                <div class="column">
-                    <div class="card">
-                        {% if post.category == "Travel" %}
-                            <div class="category-t">
-                                <div class="category-tag">
-                                    {{ post.category }}
-                                </div>
-                            </div>
-                        {% elif post.category == "Photo" %}
-                            <div class="category-p">
-                                <div class="category-tag">
-                                    {{ post.category }}
-                                </div>
-                            </div>
-                        {% elif post.category == "Blog" %}
-                            <div class="category-b">
-                                <div class="category-tag">
-                                    {{ post.category }}
-                                </div>
-                            </div>
-                        {% else %}
-                            <div class="category-pr">
-                                <div class="category-tag">
-                                    {{ post.category }}
-                                </div>
-                            </div>
-                        {% endif %}
-                        <img src="{{ post.thumbnail.url }}" class="card-image">
-                        <p class="card-desc">{{ post.description }}</p>
-                        <div class="card-content">
-                            <div class="title">
-                                <p><span>{{ post.title }}</span></p>
-                            </div>
-                            {% if post.category == "Travel" %}
-                                <div class="location">
-                                    <p><span>{{ post.location }}, {{ post.country }}</span></p>
-                                </div>
-                            {% elif post.category == "Photo" %}
-                                <div class="camera">
-                                    <p><span>{{ post.camera }}</span></p>
-                                </div>
-                            {% elif post.category == "Blog" %}
-                            {% else %}
-                                <div class="project-card-content">
-                                    <p><span>{{ post.topic }}</span></p>
-                                </div>
-                            {% endif %}
-                            
-                            <div class="update-time">
-                                <p><span>{{ post.post_time }}</span></p>
-                            </div>
+            {% for post in posts %}
+            <div class="card">
+                {% if post.category == "Travel" %}
+                    <div class="category-t">
+                        <div class="category-tag">
+                            {{ post.category }}
                         </div>
                     </div>
-                </div>
-                {% endfor %}
-            </div>
-            <div class="row">
-                {% for post in posts2 %}
-                <div class="column">
-                    <div class="card">
-                        {% if post.category == "Travel" %}
-                            <div class="category-t">
-                                <div class="category-tag">
-                                    {{ post.category }}
-                                </div>
-                            </div>
-                        {% elif post.category == "Photo" %}
-                            <div class="category-p">
-                                <div class="category-tag">
-                                    {{ post.category }}
-                                </div>
-                            </div>
-                        {% elif post.category == "Blog" %}
-                            <div class="category-b">
-                                <div class="category-tag">
-                                    {{ post.category }}
-                                </div>
-                            </div>
-                        {% else %}
-                            <div class="category-pr">
-                                <div class="category-tag">
-                                    {{ post.category }}
-                                </div>
-                            </div>
-                        {% endif %}
-                        <img src="{{ post.thumbnail.url }}" class="card-image">
-                        <p class="card-desc">{{ post.description }}</p>
-                        <div class="card-content">
-                            <div class="title">
-                                <p><span>{{ post.title }}</span></p>
-                            </div>
-                            {% if post.category == "Travel" %}
-                                <div class="location">
-                                    <p><span>{{ post.location }}, {{ post.country }}</span></p>
-                                </div>
-                            {% elif post.category == "Photo" %}
-                                <div class="camera">
-                                    <p><span>{{ post.camera }}</span></p>
-                                </div>
-                            {% elif post.category == "Project" %}
-                                <div class="project-card-content">
-                                    <p><span>{{ post.topic }}</span></p>
-                                </div>
-                            {% elif post.category == "Blog" %}
-                            {% else %}
-                            {% endif %}
-                            <div class="update-time">
-                                <p><span>{{ post.post_time }}</span></p>
-                            </div>
+                {% elif post.category == "Photo" %}
+                    <div class="category-p">
+                        <div class="category-tag">
+                            {{ post.category }}
                         </div>
                     </div>
+                {% elif post.category == "Blog" %}
+                    <div class="category-b">
+                        <div class="category-tag">
+                            {{ post.category }}
+                        </div>
+                    </div>
+                {% else %}
+                    <div class="category-pr">
+                        <div class="category-tag">
+                            {{ post.category }}
+                        </div>
+                    </div>
+                {% endif %}
+                <img src="{{ post.thumbnail.url }}" class="card-image">
+                <p class="card-desc">{{ post.description }}</p>
+                <div class="card-content">
+                    <div class="title">
+                        <p><span>{{ post.title }}</span></p>
+                    </div>
+                    {% if post.category == "Travel" %}
+                        <div class="location">
+                            <p><span>{{ post.location }}, {{ post.country }}</span></p>
+                        </div>
+                    {% elif post.category == "Photo" %}
+                        <div class="camera">
+                            <p><span>{{ post.camera }}</span></p>
+                        </div>
+                    {% elif post.category == "Blog" %}
+                    {% else %}
+                        <div class="project-card-content">
+                            <p><span>{{ post.topic }}</span></p>
+                        </div>
+                    {% endif %}
+                    
+                    <div class="update-time">
+                        <p><span>{{ post.post_time }}</span></p>
+                    </div>
                 </div>
-                {% endfor %}
             </div>
+            {% endfor %}
         </div>
     </div>
 </section>
