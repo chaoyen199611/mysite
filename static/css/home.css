@@ -1,7 +1,5 @@
 #two{
   background-color: #f6f2e7;
-  display: block;
-
 }
 
 #two-h2{
@@ -27,6 +25,10 @@ p {
 
 .about-me{
   padding-top: 5%;
+  width: 60vw;
+}
+
+.latest-project{
   width: 60vw;
 }
 
@@ -101,31 +103,7 @@ p {
   float: right;
 }
 
-.sidebar{
-  width: 20%;
-  border-style: solid;
-  border-color: black;
-  border-radius: 20px;
-  height: 40%;
-  margin-top: 5%;
-  overflow: hidden;
-}
 
-.sidebar a{
-  display:block;
-  color: black;
-  padding: 5%;
-  text-decoration: none;
-}
-.sidebar a.active {
-  background-color: #04AA6D;
-  color: black;
-}
-
-.sidebar a:hover:not(.active) {
-  background-color: black;
-  color: white;
-}
 
 .card-list{
   align-items: center;
@@ -221,4 +199,32 @@ p span{
     opacity: 0.9;
     height: 35vh;
     overflow-y:auto;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+}
+
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a:hover:not(.active) {
+  background-color: #111;
+}
+
+.active {
+  background-color: #04AA6D;
 }
