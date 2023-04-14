@@ -33,15 +33,9 @@ p,h2,h3{
 }
 
 .navbar-nav > li:hover {
-    background-color: #53ca32;
-    border-radius: 30px;
-    color: black;
+    background-color: black;
 }
 
-.active{
-    background-color: #53ca32;
-    border-radius: 30px;
-}
 
 .navbar-nav li > a{
     color: aliceblue;
