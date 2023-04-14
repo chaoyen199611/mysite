@@ -3,6 +3,7 @@
 }
 
 #two-h2{
+  margin-top: 5%;
   color: black;
 }
 
@@ -91,34 +92,13 @@ p {
   color: aliceblue;
   width: 60vw;
 }
+
 .card  {
-  color: black;
-  height: 35vh;
+  height: 20vh;
   width: 20vw;
-  background: aliceblue;
-  margin-top: 10%;
-  border-style: solid;
-  border-color: white;
-  border-radius: 5%;
-  float: right;
 }
-
-
 
 .card-list{
-  align-items: center;
-  width: 80vw;
-}
-
-.card-content{
-  position: absolute;
-  height: 40%;
-  width: 100%;
-  top: 60%;
-  text-align: right;
-  justify-content: center;
-  padding-right: 5%;
-  z-index: 5;
 }
 
 .title{
@@ -127,37 +107,7 @@ p {
 
 }
 
-.category-pr, .category-b, .category-p, .category-t{
-  top: 5%;
-  left: 5%;
-  height: 25px;
-  position: absolute;
-  border-style: solid;
-}
 
-.category-b{
-  background-color: aqua;
-}
-
-.category-p{
-  background-color: purple;
-}
-
-.category-t{
-  background-color: green;
-}
-
-.category-pr{
-  background-color: orange;
-}
-
-.category-tag{
-  background-color: black;
-  margin-left: 20px;
-  height: 100%;
-  width: 60px;
-  color: white;
-}
 
 .location, .update-time, .camera, .project-card-content{
   color: white;
@@ -174,57 +124,43 @@ p span{
 .card-image{
   object-fit: cover;
   height: 35vh;
-  border-radius: 5%;
 }
 
 
-.card-desc {
-    display: block;
-    font-size: 1rem;
-    position: absolute;
-    top: 0;
-    opacity: 0;
-    padding: 18px 8%;
-    color: black;
-    background-color: aliceblue;
-    transition: 0.8s ease;
-    border-radius: 5%;
-    z-index: 10;
-    height: 35vh;
-    width:100%;
-    overflow: hidden;
-}
 
-.card:hover .card-desc {
-    opacity: 0.9;
-    height: 35vh;
-    overflow-y:auto;
-}
-
-ul {
+.sidebar ul {
   list-style-type: none;
+  overflow: hidden;
+  display: flex;
+  align-items: stretch;
+  justify-content: space-between;
   margin: 0;
   padding: 0;
-  overflow: hidden;
-  background-color: #333;
+  margin-top: 5%;
+  border-bottom: 2px solid black;
 }
 
-li {
-  float: left;
+.sidebar li{
+  display: inline-block;
+  flex: 0 1 auto;
+  width: 100%;
+  
 }
 
-li a {
+.sidebar li a {
   display: block;
-  color: white;
+  color: black;
   text-align: center;
   padding: 14px 16px;
+  font-size: 1.5rem;
   text-decoration: none;
 }
 
-li a:hover:not(.active) {
-  background-color: #111;
+.sidebar li a:hover:not(.active) {
+  background-color: #04AA6D;
 }
 
-.active {
+.sidebar .active {
   background-color: #04AA6D;
+  border-radius: 0;
 }

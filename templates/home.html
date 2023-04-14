@@ -30,65 +30,17 @@
         <div class="latest">
             <div class="sidebar">
                 <ul>
-                    <li><a class="active" href="#home">Home</a></li>
-                    <li><a href="#news">News</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                    <li><a href="#about">About</a></li>
+                    <li class="active latest-nav"><a href="#home">All</a></li>
+                    <li class="latest-nav"><a href="#home">Projects</a></li>
+                    <li class="latest-nav"><a href="#news">Blogs</a></li>
+                    <li class="latest-nav"><a href="#contact">Photos</a></li>
+                    <li class="latest-nav"><a href="#about">Travel</a></li>
                 </ul>
             </div>
             <div class="card-list">
                 {% for post in posts %}
                 <div class="card">
-                    {% if post.category == "Travel" %}
-                        <div class="category-t">
-                            <div class="category-tag">
-                                {{ post.category }}
-                            </div>
-                        </div>
-                    {% elif post.category == "Photo" %}
-                        <div class="category-p">
-                            <div class="category-tag">
-                                {{ post.category }}
-                            </div>
-                        </div>
-                    {% elif post.category == "Blog" %}
-                        <div class="category-b">
-                            <div class="category-tag">
-                                {{ post.category }}
-                            </div>
-                        </div>
-                    {% else %}
-                        <div class="category-pr">
-                            <div class="category-tag">
-                                {{ post.category }}
-                            </div>
-                        </div>
-                    {% endif %}
                     <img src="{{ post.thumbnail.url }}" class="card-image">
-                    <p class="card-desc">{{ post.description }}</p>
-                    <div class="card-content">
-                        <div class="title">
-                            <p><span>{{ post.title }}</span></p>
-                        </div>
-                        {% if post.category == "Travel" %}
-                            <div class="location">
-                                <p><span>{{ post.location }}, {{ post.country }}</span></p>
-                            </div>
-                        {% elif post.category == "Photo" %}
-                            <div class="camera">
-                                <p><span>{{ post.camera }}</span></p>
-                            </div>
-                        {% elif post.category == "Blog" %}
-                        {% else %}
-                            <div class="project-card-content">
-                                <p><span>{{ post.topic }}</span></p>
-                            </div>
-                        {% endif %}
-                        
-                        <div class="update-time">
-                            <p><span>{{ post.post_time }}</span></p>
-                        </div>
-                    </div>
                 </div>
                 {% endfor %}
             </div>
@@ -96,3 +48,8 @@
     </div>
 </section>
 {% endblock %}
+
+{% block homepagescript %}
+<script src="https://code.jquery.com/jquery-3.6.4.min.js" integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous"></script>
+<script src="{% static 'js/home.js' %}"></script>
+{%endblock%}
