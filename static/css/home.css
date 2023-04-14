@@ -87,18 +87,15 @@ p {
 
 .latest{
   display: block;
-  text-align: center;
   justify-content: center;
   color: aliceblue;
   width: 60vw;
 }
 
-.card  {
-  height: 20vh;
-  width: 20vw;
-}
 
 .card-list{
+  margin-top: 2%;
+  margin-bottom: 2%;
 }
 
 .title{
@@ -107,7 +104,21 @@ p {
 
 }
 
+.project-block{
+  display: flex;
+}
 
+.card-content{
+  padding-top: 2%;
+  padding-left: 5%;
+}
+.card-content>h3{
+  color: black;
+}
+
+.card-content>p{
+  color: black;
+}
 
 .location, .update-time, .camera, .project-card-content{
   color: white;
@@ -123,7 +134,9 @@ p span{
 
 .card-image{
   object-fit: cover;
-  height: 35vh;
+  margin-top: 2%;
+  height: 20vh;
+  width: 15vw;
 }
 
 

@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% load static %}
+{% block traveldetail_style %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/traveldetail.css' %}">
+{% endblock %}
+
+{% block traveldetail %}
+<div class="projectcontainer">
+    <div class="project">
+        <h2>{{ travelMain.title }}</h2>
+        <div class="project-desc">{{ travelMain.description }}</div>
+        {% for section in sections %}
+        <h3>{{ section.section_title }}</h3>
+        <hr>
+        {% if section.section_image.url != "null" %}
+            <img src="{{ section.section_image.url }}" class="section-image">
+        {% endif %}
+        <div class="project-text">{{ section.section_context }}</div>
+
+        
+        {% endfor %}
+
+    </div>
+</div>
+{% endblock %}

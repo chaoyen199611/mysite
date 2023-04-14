@@ -1,6 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Noto+Sans&display=swap');
+
 html,body{
     background-color: #3e343f;
     margin:0;
+    font-family: 'Noto Sans', sans-serif;
 }
 
 section {
@@ -17,12 +20,10 @@ p,ul {
 
 p,h2,h3{
     color: aliceblue;
-    font-family: "Gill Sans", sans-serif;
 }
 
 .navbar-nav > li{
     color: black;
-    font-family: "Gill Sans", sans-serif;
     margin-left: 2%;
     margin-right: 2%;
 }

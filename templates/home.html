@@ -39,9 +39,26 @@
             </div>
             <div class="card-list">
                 {% for post in posts %}
-                <div class="card">
-                    <img src="{{ post.thumbnail.url }}" class="card-image">
+                <div class="project-block">
+                    <div>
+                        <img class="card-image" src="{{ post.thumbnail.url }}" >
+                    </div>
+                    <div class="card-content">
+                        <h3>{{ post.title }}</h3>
+                        <p>{{ post.category }}</p>
+                        <p>{{ post.description }}</p>
+                        <li>
+                        {% if post.category == "Project" %}
+                            <a href="{% url 'project-detail' post.id %}">
+                        {% elif post.category == "Travel" %}
+                            <a href="{% url 'travel-detail' post.id %}">
+                        {% endif %}
+                        learn more</a></li>
+                        
+                    </div>
+                    
                 </div>
+                
                 {% endfor %}
             </div>
         </div>
