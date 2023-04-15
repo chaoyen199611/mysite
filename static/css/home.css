@@ -120,6 +120,7 @@ p {
   color: black;
 }
 
+
 .location, .update-time, .camera, .project-card-content{
   color: white;
   height: 25%;
@@ -153,26 +154,26 @@ p span{
   border-bottom: 2px solid black;
 }
 
-.sidebar li{
+.sidebar > ul > li{
   width: 100%;
   height: 5vh;
 }
 
-.sidebar > ul > li > a {
+.sidebar > ul > li {
   display: block;
-  color: black;
   text-align: center;
   padding: 14px 16px;
   font-size: 1.2rem;
   text-decoration: none;
+  color: black;
 }
 
-.sidebar a:hover {
+.sidebar li:hover {
   background-color: black;
   color : white;
 }
 
 .active {
   background-color: black;
-  color: white;
+  color: white !important;
 }

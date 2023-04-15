@@ -28,13 +28,13 @@
     <div class="latest-project">
         <h2 style="text-align: center;" id="two-h2">Latest Post</h2>
         <div class="latest">
-            <div class="sidebar">
+            <div class="sidebar" data-url="{% url 'home-page' %}">
                 <ul>
-                    <li class="active latest-nav"><a href="#home">All</a></li>
-                    <li class="latest-nav"><a href="#home">Projects</a></li>
-                    <li class="latest-nav"><a href="#news">Blogs</a></li>
-                    <li class="latest-nav"><a href="#contact">Photos</a></li>
-                    <li class="latest-nav"><a href="#about">Travel</a></li>
+                    <li class="latest-nav active">All</li>
+                    <li class="latest-nav">Projects</li>
+                    <li class="latest-nav">Blogs</li>
+                    <li class="latest-nav">Photos</li>
+                    <li class="latest-nav">Travel</li>
                 </ul>
             </div>
             <div class="card-list">
@@ -54,9 +54,7 @@
                             <a href="{% url 'travel-detail' post.id %}">
                         {% endif %}
                         learn more</a></li>
-                        
                     </div>
-                    
                 </div>
                 
                 {% endfor %}
@@ -68,5 +66,5 @@
 
 {% block homepagescript %}
 <script src="https://code.jquery.com/jquery-3.6.4.min.js" integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous"></script>
-<script src="{% static 'js/home.js' %}"></script>
+<script defer src="{% static 'js/home.js' %}"></script>
 {%endblock%}
