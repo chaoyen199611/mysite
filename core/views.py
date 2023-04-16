@@ -39,7 +39,7 @@ class HomePageView(TemplateView):
                                         final=final.union(tmp)
                                 context['posts']=final
                                 return self.render_to_response(context)
-                                
+                                #testing
                                 
                         elif selection == "Travel":
                                 latest_post=PostBase.objects.values_list('id','category').order_by('-id').filter(category="Travel")[:4]
