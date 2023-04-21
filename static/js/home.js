@@ -1,4 +1,19 @@
 $(document).ready(function(){
+    const category = document.querySelectorAll("#post-category").forEach(function (el){
+        console.log(el.textContent);
+        if(el.textContent == "Project"){
+            el.style.color = "#154c79";
+        }
+        else if(el.textContent == "Travel"){
+            el.style.color = "#de7010";
+        }
+        else if(el.textContent == "Photo"){
+            el.style.color = "#6e14b8";
+        }
+        else{
+            el.style.color = "#b814b2";
+        }
+    });
     $.ajax({          
         type:"GET",
         url:$(".sidebar").attr("data-url"),
@@ -15,7 +30,6 @@ $(document).ready(function(){
         failure: function() {console.log("Error");}
     });
 });
-    
 
 $(function() {
     $(".latest-nav").click(function() {
@@ -41,3 +55,4 @@ $(function() {
         });
     });
 });
+

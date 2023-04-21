@@ -40,21 +40,23 @@
             <div class="card-list">
                 {% for post in posts %}
                 <div class="project-block">
-                    <div>
+                    <div class="card-image-container">
                         <img class="card-image" src="{{ post.thumbnail.url }}" >
                     </div>
                     <div class="card-content">
-                        <h3>{{ post.title }}</h3>
-                        <p>{{ post.category }}</p>
-                        <p>{{ post.description }}</p>
-                        <li>
+                        <p id="post-category">{{ post.category }}</p>
                         {% if post.category == "Project" %}
-                            <a href="{% url 'project-detail' post.id %}">
+                            <a class="post-link" href="{% url 'project-detail' post.id %}">
                         {% elif post.category == "Travel" %}
-                            <a href="{% url 'travel-detail' post.id %}">
+                            <a class="post-link" href="{% url 'travel-detail' post.id %}">
+                        {% elif post.category == "Blog" %}
+                            <a class="post-link" href="#">
+                        {% elif post.category == "Photo" %}
+                            <a class="post-link" href="#">
                         {% endif %}
-                        learn more</a></li>
+                        {{ post.title }}</a>
                     </div>
+                    <div class="update-time">{{ post.post_time}}</div>
                 </div>
                 
                 {% endfor %}

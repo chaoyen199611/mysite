@@ -13,7 +13,7 @@
         <h3>{{ section.section_title }}</h3>
         <hr>
         {% if section.section_image.url != "null" %}
-            <img src="{{ section.section_image.url }}" class="section-image">
+            <img class="section-image" src="{{ section.section_image.url }}" >
         {% endif %}
         <div class="project-text">{{ section.section_context }}</div>
 
