@@ -38,36 +38,6 @@
         {% block projectdetail %}{% endblock %}
         {% block traveldetail %}{% endblock %}
         {% block travelmap %}{% endblock %}
-        <section id="three">
-            <div class="contact-container">
-                <div class="contact-info">
-                    <h2>Contact Info</h2>
-                    <p>Email : chaoyen510220@gmail.com</p>
-
-                    <a href="https://discord.gg/94uaEvaEC9" target="_blank">
-                        <img class="discord-link" src="https://discordapp.com/api/guilds/889508680733691954/widget.png?style=banner3" alt="">
-                    </a>
-                </div>
-                <div class="email-block">
-                    <form method="post" action="{% url 'home-page' %}"> 
-                        {% csrf_token %} 
-                    <div class="mb-1">
-                        <label for="exampleFormControlInput1" class="form-label">Receipt email address</label>
-                        <input type="text" class="form-control" name="email" id="exampleFormControlInput1" placeholder="Receipt email address">
-                        </div>
-                        <div class="mb-3">
-                        <label for="exampleInputSubject" class="form-label">Subject</label>
-                        <input type="text" class="form-control" name="subject" id="exampleInputSubject">
-                        </div>
-                        <div class="mb-3">
-                        <label for="exampleFormControlTextarea1" class="form-label">Message</label>
-                        <textarea class="form-control" id="exampleFormControlTextarea1" name="message" rows="3"></textarea>
-                        </div>
-                        <button type="submit" class="btn btn-primary">Send</button>
-                    </form>
-                </div>
-            </div>
-        </section>
         <footer>
             <p>© 2023 Joey Huang all right reserved</p>
         </footer>
