@@ -1,5 +1,5 @@
 #two{
-  background-color: #12294d;
+  background-color: #003A6B;
 }
 
 #two-h2{
@@ -167,25 +167,25 @@ p span{
   border-bottom: 2px solid aliceblue;
 }
 
-.sidebar > ul > li{
-  width: 100%;
-  height: auto;
-}
 
 .sidebar > ul > li {
   display: block;
   text-align: center;
-  font-size: 1.2rem;
+  font-size: 1.3rem;
   text-decoration: none;
+  width: 100%;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  height: auto;
   color: aliceblue;
 }
 
 .sidebar li:hover {
-  background-color: aliceblue;
+  background-color: #5293BB;
   color : black;
 }
 
 .active {
-  background-color: aliceblue;
+  background-color: #5293BB;
   color: black !important;
 }
