@@ -14,29 +14,15 @@ $(document).ready(function(){
             el.style.color = "#b814b2";
         }
     });
-    $.ajax({          
-        type:"GET",
-        url:$(".sidebar").attr("data-url"),
-        data : {
-            "selection": "All"
-        },
-        dataType: 'json',
-        success:function(response){
-            var rep = JSON.parse(response);
-            $.each(rep, function(m, item){
-                console.log(m,item);
-            });
-        },
-        failure: function() {console.log("Error");}
-    });
 });
+
+const basecard = document.querySelector(".project-block");
 
 $(function() {
     $(".latest-nav").click(function() {
         $(".latest-nav").removeClass("active");
         $(this).addClass("active");
         $.ajax({
-            
             type:"GET",
             url:$(".sidebar").attr("data-url"),
             data : {
@@ -44,11 +30,37 @@ $(function() {
             },
             dataType: 'json',
             success:function(response){
-                
                 let rep = JSON.parse(response);
-                console.log(rep);
-                $.each(rep, function(m, item){
-                   
+                
+                let all = document.querySelector(".card-list");
+                all.innerHTML="";
+                $.each(rep, function(m,item){  
+                    console.log(item) 
+                    const clone = basecard.cloneNode(true);
+                    let img=clone.querySelector(".card-image");
+                    img.src="/media/"+item.fields.thumbnail;
+                    let category = clone.querySelector("#post-category");
+                    category.textContent = item.fields.category;
+                    let link = clone.querySelector(".post-link");
+                    link.textContent = item.fields.title;
+                    if(category.textContent == "Project"){
+                        category.style.color = "#154c79";
+                        link.href = '/projects/'+item.pk;
+                    }
+                    else if(category.textContent == "Travel"){
+                        category.style.color = "#de7010";
+                        link.href = '/travel/'+item.pk;
+                    }
+                    else if(category.textContent == "Photo"){
+                        category.style.color = "#6e14b8";
+                    }
+                    else{
+                        category.style.color = "#b814b2";
+                    }
+                    
+                    let update_time = clone.querySelector(".update-time");
+                    update_time.textContent = item.fields.post_time;
+                    all.appendChild(clone);
                 });
             },
             failure: function() {console.log("Error");}

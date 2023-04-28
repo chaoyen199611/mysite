@@ -94,7 +94,7 @@ p {
 }
 
 .post-link{
-  font-size: 1.5rem;
+  font-size: 1.1rem;
   color:aliceblue;
 }
 .post-link:hover{
@@ -114,6 +114,7 @@ p {
 }
 
 .project-block{
+  margin-top: 2%;
   display: flex;
   width: 100%;
 }
@@ -171,7 +172,7 @@ p span{
 .sidebar > ul > li {
   display: block;
   text-align: center;
-  font-size: 1.3rem;
+  font-size: 1rem;
   text-decoration: none;
   width: 100%;
   padding-top: 5px;
