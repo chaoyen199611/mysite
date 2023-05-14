@@ -10,10 +10,12 @@ class HomePageView(TemplateView):
         latest_post = PostBase.objects.none()
         tmp = PostBase.objects.none()
 
+        
         def get(self, *args,**kwargs):
 
                 context=super().get_context_data(**kwargs)
                 selection=self.request.GET.get('selection')
+                context['is_superuser'] = self.request.user.is_superuser
                 
                 if self.request.headers.get('x-requested-with') == 'XMLHttpRequest':
                         if selection == "All":
@@ -39,4 +41,5 @@ class HomePageView(TemplateView):
                 else:
                         latest_post=PostBase.objects.order_by('-id')[:4]
                         context['posts']=latest_post
+                        print(self.request.user.is_superuser)
                         return self.render_to_response(context)
