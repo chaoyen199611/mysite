@@ -1,8 +1,12 @@
-from django.shortcuts import render
+from django.shortcuts import render,redirect
 from django.views.generic.base import TemplateView
+from django.forms import modelform_factory
 from django.http import JsonResponse
 from django.core import serializers
-from .models import PostBase
+from .models import PostBase,BaseForm
+
+
+
 
 class HomePageView(TemplateView):
 
@@ -19,17 +23,13 @@ class HomePageView(TemplateView):
                 
                 if self.request.headers.get('x-requested-with') == 'XMLHttpRequest':
                         if selection == "All":
-                                latest_post=PostBase.objects.order_by('-id')[:4]
-                                
+                                latest_post=PostBase.objects.order_by('-id')[:4]      
                         elif selection == "Travel":
                                 latest_post=PostBase.objects.order_by('-id').filter(category="Travel")[:4]
-
                         elif selection == "Projects":
                                 latest_post=PostBase.objects.order_by('-id').filter(category="Project")[:4]
-                        
                         elif selection == "Blogs":
                                 latest_post=PostBase.objects.order_by('-id').filter(category="Blogs")[:4]
-                
                         elif selection == "Photos":
                                 latest_post=PostBase.objects.order_by('-id').filter(category="Photos")[:4]
 
@@ -41,5 +41,20 @@ class HomePageView(TemplateView):
                 else:
                         latest_post=PostBase.objects.order_by('-id')[:4]
                         context['posts']=latest_post
+                        context['form'] = BaseForm()
                         print(self.request.user.is_superuser)
+
                         return self.render_to_response(context)
+                
+        def post(self,request, *args, **kwargs):
+        # Access the submitted form data
+                
+                form = BaseForm(request.POST)
+                if form.is_valid():
+                # <process form cleaned data>
+                        print(form.cleaned_data["title"])
+                        print(form.cleaned_data["category"])
+                        
+                        return redirect('home-page')
+                
+                return self.get(self.request, *args, **kwargs)

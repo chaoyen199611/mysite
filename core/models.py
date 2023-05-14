@@ -1,5 +1,5 @@
 from django.db import models
-
+from django.forms import ModelForm
 
 # Create your models here.
 
@@ -17,5 +17,9 @@ class PostBase(models.Model):
     post_time = models.DateField()
     thumbnail = models.ImageField(null=True,blank=True,upload_to="images/")
 
+class BaseForm(ModelForm):
+    class Meta:
+        model = PostBase
+        fields = ["title","category","description","post_time","thumbnail"]
 
 
