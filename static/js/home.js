@@ -14,6 +14,11 @@ $(document).ready(function(){
             el.style.color = "#b814b2";
         }
     });
+
+    $('td[name="category"]').on('change',function(){
+        let selectedValue =$(this).val();
+        console.log(selectedValue);
+    })
 });
 
 const basecard = document.querySelector(".project-block");
@@ -67,4 +72,10 @@ $(function() {
         });
     });
 });
+
+$(function(){
+    
+    
+});
+
 

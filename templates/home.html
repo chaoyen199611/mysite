@@ -65,15 +65,16 @@
     </div>
 </section>
 {% if is_superuser %}
-<form method="post" action="{% url 'home-page' %}">
+<form id="create-post" method="post" action="{% url 'home-page' %}">
     {% csrf_token %}
     {% for field in form %}
         <div class="form-field">
-            {{ field.label_tag }}
-            {{ field }}
+            <div id="form-label">{{ field.label_tag }}</div>
+            <div id="input-field">{{ field }}</div>
             {{ field.errors }}
         </div>
     {% endfor %}
+    <button id="add-button" type="button">Add Field</button>
     <button type="submit">Submit</button>
 </form>
 {% endif %}
