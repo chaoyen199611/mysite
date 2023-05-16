@@ -154,6 +154,10 @@ p span{
   justify-content: center;
 }
 
+#create-post{
+  align-items: center;
+}
+
 
 
 .sidebar > ul {

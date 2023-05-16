@@ -65,18 +65,24 @@
     </div>
 </section>
 {% if is_superuser %}
-<form id="create-post" method="post" action="{% url 'home-page' %}">
-    {% csrf_token %}
-    {% for field in form %}
-        <div class="form-field">
-            <div id="form-label">{{ field.label_tag }}</div>
-            <div id="input-field">{{ field }}</div>
-            {{ field.errors }}
-        </div>
-    {% endfor %}
-    <button id="add-button" type="button">Add Field</button>
-    <button type="submit">Submit</button>
-</form>
+<section id="form-section">
+    
+    <form id="create-post" method="post" action="{% url 'home-page' %}">
+        <h2>Create Post</h2>
+        {% csrf_token %}
+        <div class="form-field">Title</div>
+        <div id="form-title">{{ form.title }}</div>
+        <div class="form-field">Category</div>
+        <div id="form-category">{{ form.category }}</div>
+        <div class="form-field">Description</div>
+        <div id="form-description">{{ form.description }}</div>
+        <div class="form-field">Thumbnail</div>
+        <div id="form-thumbnail">{{ form.thumbnail }}<span>Upload</span></div>
+        <img id="preview-image" style="width: 100px; height: 100px; background-color:grey"/>
+        <button class="button" id="add-button" type="button">Add Field</button>
+        <button class="button" type="submit">Submit</button>
+    </form>
+</section>
 {% endif %}
 {% endblock %}
 

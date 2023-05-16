@@ -15,13 +15,19 @@ $(document).ready(function(){
         }
     });
 
-    $('td[name="category"]').on('change',function(){
-        let selectedValue =$(this).val();
-        console.log(selectedValue);
-    })
+    
+
 });
 
 const basecard = document.querySelector(".project-block");
+
+$(function(){
+    $("#id_category").on("change", function() {
+        var selectedValue = $(this).val();
+        console.log(selectedValue);
+    });
+});
+
 
 $(function() {
     $(".latest-nav").click(function() {
@@ -73,9 +79,11 @@ $(function() {
     });
 });
 
-$(function(){
-    
-    
-});
+function PreviewImage() {
+    var oFReader = new FileReader();
+    oFReader.readAsDataURL(document.getElementById("id_thumbnail").files[0]);
 
-
+    oFReader.onload = function (oFREvent) {
+        document.getElementById("preview-image").src = oFREvent.target.result;
+    };
+};

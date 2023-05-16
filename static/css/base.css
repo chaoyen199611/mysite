@@ -18,7 +18,7 @@ p,ul {
     padding: 0
 }
 
-p,h2,h3{
+p,h2,h3,.form-field{
     color: aliceblue;
 }
 
@@ -76,4 +76,53 @@ footer {
     justify-content: center;
     padding: 5vh;
     color: #fff;
+}
+
+#form-thumbnail:hover, #form-thumbnail:active, #form-thumbnail:focus {
+    background: #00a2a4;
+    cursor: pointer;
+}
+
+#form-thumbnail {
+	background: #00bcbe;
+	-webkit-border-radius: 15px;
+	-moz-border-radius: 15px;
+	border-radius: 15px;
+	color: #fff;
+	font-size: 1em;
+	font-weight: bold;
+	margin: 1.25em auto;/*20px/16px 0*/
+	overflow: hidden;
+	padding: 0.875em;/*14px/16px*/
+	position: relative;
+	text-align: center;
+	width: 120px;
+   cursor: pointer;
+}
+
+#id_thumbnail {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 0;
+    padding: 0;
+    font-size: 20px;
+    cursor: pointer;
+    opacity: 0;
+    filter: alpha(opacity=0);
+    width: 148px;
+    height: 46px;
+  cursor: pointer;
+}
+
+input[type="file"] {
+    position: fixed;
+    right: 100%;
+    bottom: 100%;
+}
+.custom-file-upload {
+    border: 1px solid #ccc;
+    display: inline-block;
+    padding: 6px 12px;
+    cursor: pointer;
 }

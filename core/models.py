@@ -1,5 +1,6 @@
 from django.db import models
 from django.forms import ModelForm
+from django import forms
 
 # Create your models here.
 
@@ -20,6 +21,14 @@ class PostBase(models.Model):
 class BaseForm(ModelForm):
     class Meta:
         model = PostBase
-        fields = ["title","category","description","post_time","thumbnail"]
+        fields = ["title","category","description","thumbnail"]
+        labels = {'title': 'title', 
+                  'category': 'category',
+                  'description': 'description',
+                  'thumbnail': 'thumbnail'}
+        
+        widgets = {
+            'thumbnail': forms.ClearableFileInput(attrs={'onchange': 'PreviewImage()'})
+        }
 
 
