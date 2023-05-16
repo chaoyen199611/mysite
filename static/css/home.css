@@ -11,6 +11,13 @@ p {
   margin: 0;
 }
 
+#preview-image{
+  object-fit: cover;
+  width: 30%;
+  height: 30%; 
+  background-color:grey
+}
+
 
 .profile-image{
   display: block;
@@ -155,6 +162,7 @@ p span{
 }
 
 #create-post{
+  text-align: center;
   align-items: center;
 }
 

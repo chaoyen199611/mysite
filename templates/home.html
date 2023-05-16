@@ -66,7 +66,6 @@
 </section>
 {% if is_superuser %}
 <section id="form-section">
-    
     <form id="create-post" method="post" action="{% url 'home-page' %}">
         <h2>Create Post</h2>
         {% csrf_token %}
@@ -78,12 +77,16 @@
         <div id="form-description">{{ form.description }}</div>
         <div class="form-field">Thumbnail</div>
         <div id="form-thumbnail">{{ form.thumbnail }}<span>Upload</span></div>
-        <img id="preview-image" style="width: 100px; height: 100px; background-color:grey"/>
-        <button class="button" id="add-button" type="button">Add Field</button>
+        <div id="basepost-preview-img">
+            <img id="preview-image"/>
+        </div>
         <button class="button" type="submit">Submit</button>
     </form>
+
+
 </section>
 {% endif %}
+
 {% endblock %}
 
 
