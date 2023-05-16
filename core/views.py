@@ -4,7 +4,7 @@ from django.forms import modelform_factory
 from django.http import JsonResponse
 from django.core import serializers
 from .models import PostBase,BaseForm
-
+from datetime import date
 
 
 
@@ -54,12 +54,17 @@ class HomePageView(TemplateView):
         def post(self,request, *args, **kwargs):
         # Access the submitted form data
                 
-                form = BaseForm(request.POST)
+                form = BaseForm(request.POST)  
                 if form.is_valid():
                 # <process form cleaned data>
                         print(form.cleaned_data["title"])
                         print(form.cleaned_data["category"])
-                        
+                        if form.cleaned_data["category"] == "Blog":
+                                print(6969)
+                        form.cleaned_data["post_time"] = date.today()
+                        form.save()
                         return redirect('home-page')
+                else:
+                        print(form.errors)
                 
                 return self.get(self.request, *args, **kwargs)

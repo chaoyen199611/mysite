@@ -2,6 +2,7 @@ from django.db import models
 from django.forms import ModelForm
 from django import forms
 
+
 # Create your models here.
 
 class PostBase(models.Model):
@@ -22,11 +23,12 @@ class BaseForm(ModelForm):
     description = forms.CharField(widget=forms.Textarea)
     class Meta:
         model = PostBase
-        fields = ["title","category","thumbnail"]
+        fields = ["title","category","description","thumbnail","post_time"]
         labels = {'title': 'title', 
                   'category': 'category',
                   'description': 'description',
-                  'thumbnail': 'thumbnail'}
+                  'thumbnail': 'thumbnail',
+                  'post_time':'post_time'}
         
         widgets = {
             'thumbnail': forms.ClearableFileInput(attrs={'onchange': 'PreviewImage()'})
