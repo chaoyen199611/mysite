@@ -23,8 +23,20 @@ const basecard = document.querySelector(".project-block");
 
 $(function(){
     $("#id_category").on("change", function() {
-        var selectedValue = $(this).val();
+        let selectedValue = $(this).val();
         console.log(selectedValue);
+        $.ajax({
+            type:"GET",
+            url:$("#create-post").attr("action"),
+            data : {
+                "category": selectedValue
+            },
+            dataType: 'json',
+            success:function(response){
+                console.log(response["foo"])
+            },
+            failure: function() {console.log("Error");}
+        });
     });
 });
 

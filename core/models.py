@@ -19,9 +19,10 @@ class PostBase(models.Model):
     thumbnail = models.ImageField(null=True,blank=True,upload_to="images/")
 
 class BaseForm(ModelForm):
+    description = forms.CharField(widget=forms.Textarea)
     class Meta:
         model = PostBase
-        fields = ["title","category","description","thumbnail"]
+        fields = ["title","category","thumbnail"]
         labels = {'title': 'title', 
                   'category': 'category',
                   'description': 'description',
@@ -30,5 +31,7 @@ class BaseForm(ModelForm):
         widgets = {
             'thumbnail': forms.ClearableFileInput(attrs={'onchange': 'PreviewImage()'})
         }
+
+        
 
 

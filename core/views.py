@@ -18,10 +18,12 @@ class HomePageView(TemplateView):
         def get(self, *args,**kwargs):
 
                 context=super().get_context_data(**kwargs)
-                selection=self.request.GET.get('selection')
                 context['is_superuser'] = self.request.user.is_superuser
-                
-                if self.request.headers.get('x-requested-with') == 'XMLHttpRequest':
+                selection=self.request.GET.get('selection')
+                category=self.request.GET.get('category')
+
+                if selection !=None:
+                          
                         if selection == "All":
                                 latest_post=PostBase.objects.order_by('-id')[:4]      
                         elif selection == "Travel":
@@ -36,14 +38,17 @@ class HomePageView(TemplateView):
                         print(latest_post)
                         finaljson = serializers.serialize('json',latest_post)
                         return JsonResponse(finaljson,safe=False)        
-                        
+
+                elif category != None:
+                        print(category)   
+                        finaljson ={'foo':'bar'}
+                        return JsonResponse(finaljson,safe=False)  
                 
                 else:
                         latest_post=PostBase.objects.order_by('-id')[:4]
                         context['posts']=latest_post
                         context['form'] = BaseForm()
                         print(self.request.user.is_superuser)
-
                         return self.render_to_response(context)
                 
         def post(self,request, *args, **kwargs):
