@@ -33,6 +33,7 @@ $(function(){
             },
             dataType: 'json',
             success:function(response){
+                $('#category-chose').text(response[selectedValue])
                 console.log(response["foo"])
             },
             failure: function() {console.log("Error");}

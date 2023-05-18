@@ -3,7 +3,8 @@ from django.views.generic.base import TemplateView
 from django.forms import modelform_factory
 from django.http import JsonResponse
 from django.core import serializers
-from .models import PostBase,BaseForm
+from .models import PostBase
+from .forms import BaseForm
 from projects.models import ProjectPost
 from datetime import date
 
@@ -42,7 +43,7 @@ class HomePageView(TemplateView):
 
                 elif category != None:
                         print(category)   
-                        finaljson ={'foo':'bar'}
+                        finaljson ={category:category}
                         return JsonResponse(finaljson,safe=False)  
                 
                 else:
