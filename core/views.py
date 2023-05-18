@@ -4,6 +4,7 @@ from django.forms import modelform_factory
 from django.http import JsonResponse
 from django.core import serializers
 from .models import PostBase,BaseForm
+from projects.models import ProjectPost
 from datetime import date
 
 
@@ -31,7 +32,7 @@ class HomePageView(TemplateView):
                         elif selection == "Projects":
                                 latest_post=PostBase.objects.order_by('-id').filter(category="Project")[:4]
                         elif selection == "Blogs":
-                                latest_post=PostBase.objects.order_by('-id').filter(category="Blogs")[:4]
+                                latest_post=PostBase.objects.order_by('-id').filter(category="Blog")[:4]
                         elif selection == "Photos":
                                 latest_post=PostBase.objects.order_by('-id').filter(category="Photos")[:4]
 
@@ -54,15 +55,19 @@ class HomePageView(TemplateView):
         def post(self,request, *args, **kwargs):
         # Access the submitted form data
                 
-                form = BaseForm(request.POST)  
+                form = BaseForm(request.POST,request.FILES)  
                 if form.is_valid():
                 # <process form cleaned data>
                         print(form.cleaned_data["title"])
                         print(form.cleaned_data["category"])
                         if form.cleaned_data["category"] == "Blog":
-                                print(6969)
-                        form.cleaned_data["post_time"] = date.today()
-                        form.save()
+                                instance = form.save(commit=False)
+                                if 'thumbnail' in request.FILES:
+                                        print(7777)
+                                        instance.thumbnail = request.FILES['thumbnail']
+                                instance.post_time = date.today()
+                                instance.save()
+                        
                         return redirect('home-page')
                 else:
                         print(form.errors)

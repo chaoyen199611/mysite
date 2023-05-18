@@ -50,7 +50,7 @@
                         {% elif post.category == "Travel" %}
                             <a class="post-link" href="{% url 'travel-detail' post.id %}">
                         {% elif post.category == "Blog" %}
-                            <a class="post-link" href="#">
+                            <a class="post-link" href="{% url 'blog-page' %}">
                         {% elif post.category == "Photo" %}
                             <a class="post-link" href="#">
                         {% endif %}
@@ -66,7 +66,7 @@
 </section>
 {% if is_superuser %}
 <section id="form-section">
-    <form id="create-post" method="post" action="{% url 'home-page' %}">
+    <form id="create-post" method="post" action="{% url 'home-page' %}" enctype="multipart/form-data">
         <h2>Create Post</h2>
         {% csrf_token %}
         <div class="form-field">Title</div>

@@ -23,12 +23,11 @@ class BaseForm(ModelForm):
     description = forms.CharField(widget=forms.Textarea)
     class Meta:
         model = PostBase
-        fields = ["title","category","description","thumbnail","post_time"]
-        labels = {'title': 'title', 
-                  'category': 'category',
-                  'description': 'description',
-                  'thumbnail': 'thumbnail',
-                  'post_time':'post_time'}
+        fields = ["title","category","description","thumbnail"]
+        # labels = {'title': 'title', 
+        #           'category': 'category',
+        #           'description': 'description',
+        #           'thumbnail': 'thumbnail'}
         
         widgets = {
             'thumbnail': forms.ClearableFileInput(attrs={'onchange': 'PreviewImage()'})
