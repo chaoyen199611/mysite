@@ -22,9 +22,10 @@ $(document).ready(function(){
 const basecard = document.querySelector(".project-block");
 
 $(function(){
+    let inherentFieldsContainer = $('#inherent-fields-container');
     $("#id_category").on("change", function() {
         let selectedValue = $(this).val();
-        console.log(selectedValue);
+        inherentFieldsContainer.empty();
         $.ajax({
             type:"GET",
             url:$("#create-post").attr("action"),
@@ -33,8 +34,7 @@ $(function(){
             },
             dataType: 'json',
             success:function(response){
-                $('#category-chose').text(response[selectedValue])
-                console.log(response["foo"])
+                inherentFieldsContainer.append(response.additional_fields);
             },
             failure: function() {console.log("Error");}
         });

@@ -1,14 +1,12 @@
 from django.shortcuts import render,redirect
+from django.template.loader import render_to_string
 from django.views.generic.base import TemplateView
-from django.forms import modelform_factory
 from django.http import JsonResponse
 from django.core import serializers
 from .models import PostBase
 from .forms import BaseForm
-from projects.models import ProjectPost
 from datetime import date
-
-
+from projects.models import ProjectPost
 
 class HomePageView(TemplateView):
 
@@ -16,6 +14,7 @@ class HomePageView(TemplateView):
         latest_post = PostBase.objects.none()
         tmp = PostBase.objects.none()
 
+        
         
         def get(self, *args,**kwargs):
 
@@ -42,15 +41,16 @@ class HomePageView(TemplateView):
                         return JsonResponse(finaljson,safe=False)        
 
                 elif category != None:
-                        print(category)   
-                        finaljson ={category:category}
-                        return JsonResponse(finaljson,safe=False)  
+                        if category == 'Project':
+                                additional_fields_html = render_to_string('../templates/form_templates/project_additional_fields.html')
+
+                        return JsonResponse({'additional_fields': additional_fields_html})  
                 
                 else:
                         latest_post=PostBase.objects.order_by('-id')[:4]
                         context['posts']=latest_post
-                        context['form'] = BaseForm()
-                        print(self.request.user.is_superuser)
+                        context['form'] = BaseForm(initial={'category':'Blog'})
+
                         return self.render_to_response(context)
                 
         def post(self,request, *args, **kwargs):
@@ -61,12 +61,18 @@ class HomePageView(TemplateView):
                 # <process form cleaned data>
                         print(form.cleaned_data["title"])
                         print(form.cleaned_data["category"])
-                        if form.cleaned_data["category"] == "Blog":
-                                instance = form.save(commit=False)
+                        if form.cleaned_data["category"] == "Project":
+                                instance = ProjectPost(
+                                        title=form.cleaned_data['title'],
+                                        category=form.cleaned_data['category'],
+                                        description=form.cleaned_data['category'],
+                                        just_test = form.cleaned_data['form_project_justtest'],
+                                        topic = form.cleaned_data['topic'],
+                                        post_time = date.today()
+                                )
                                 if 'thumbnail' in request.FILES:
-                                        print(7777)
                                         instance.thumbnail = request.FILES['thumbnail']
-                                instance.post_time = date.today()
+                                
                                 instance.save()
                         
                         return redirect('home-page')
