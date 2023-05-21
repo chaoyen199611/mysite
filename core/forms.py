@@ -5,15 +5,9 @@ from blog.models import BlogPost
 
 class BaseForm(ModelForm):
 
-    topic = forms.CharField()
-    just_test = forms.CharField()
-    
     class Meta:
         model = PostBase
         fields = ["title","category","description","thumbnail"]
-        widgets = {
-            'thumbnail': forms.ClearableFileInput(attrs={'onchange': 'PreviewImage()'})
-        }
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)

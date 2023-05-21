@@ -10,15 +10,6 @@
 p {
   margin: 0;
 }
-
-#preview-image{
-  object-fit: cover;
-  width: 30%;
-  height: 30%; 
-  background-color:grey
-}
-
-
 .profile-image{
   display: block;
   margin-left: auto;
@@ -39,8 +30,6 @@ p {
 .latest-project{
   width: 60vw;
 }
-
-
 
 .social{
   margin-top: 2%;
@@ -161,14 +150,6 @@ p span{
   justify-content: center;
 }
 
-#create-post{
-  text-align: center;
-  align-items: center;
-  width: 60vw;
-}
-
-
-
 .sidebar > ul {
   list-style-type: none;
   overflow: hidden;
@@ -202,18 +183,4 @@ p span{
 .active {
   background-color: #5293BB;
   color: black !important;
-}
-
-#id_title{
-  width: 50%;
-}
-
-#id_category{
-  width: 50%;
-}
-
-#id_description{
-  width: 50%;
-  height: 20%;
-  resize: none;
 }

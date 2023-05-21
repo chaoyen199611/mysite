@@ -1,13 +1,13 @@
-from django.forms import ModelForm
 from .models import ProjectPost
+from core.forms import BaseForm
 from django import forms
 
-class ProjectForm(ModelForm):
-    thumbnail = forms.ImageField()
+class ProjectForm(BaseForm):
+
     class Meta:
         model = ProjectPost
-        fields = ["topic","just_test"]
-
+        fields = BaseForm.Meta.fields + ["topic","just_test"]
         widgets = {
             'thumbnail': forms.ClearableFileInput(attrs={'onchange': 'PreviewImage()'})
         }
+

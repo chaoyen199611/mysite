@@ -2,6 +2,7 @@
 {% load static %}
 {% block homestyle %}
 <link  rel="stylesheet" type="text/css" href="{% static 'css/home.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'css/forms.css' %}">
 {% endblock %}
 
 
@@ -64,32 +65,7 @@
         </div>
     </div>
 </section>
-{% if is_superuser %}
-<section id="form-section">
-    <form id="create-post" method="post" action="{% url 'home-page' %}" enctype="multipart/form-data">
-        <h2>Create Post</h2>
-        {% csrf_token %}
-        <div class="form-field">Title</div>
-        <div id="form-title">{{ form.title }}</div>
-        <div class="form-field">Category</div>
-        <div id="form-category">{{ form.category }}</div>
-        <div class="form-field">Description</div>
-        <div id="form-description">{{ form.description }}</div>
-        <div class="form-field">Thumbnail</div>
-        <div id="form-thumbnail">{{ form.thumbnail }}<span>Upload</span></div>
-        <div id="basepost-preview-img">
-            <img id="preview-image"/>
-        </div>
-        <div id="inherent-fields-container"></div>
-        <button class="button" type="submit">Submit</button>
-    </form>
-    <div id="category-chose"></div>
-</section>
-{% endif %}
-
 {% endblock %}
-
-
 
 {% block homepagescript %}
 <script src="https://code.jquery.com/jquery-3.6.4.min.js" integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous"></script>

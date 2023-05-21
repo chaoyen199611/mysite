@@ -14,33 +14,9 @@ $(document).ready(function(){
             el.style.color = "#b814b2";
         }
     });
-
-    
-
 });
 
 const basecard = document.querySelector(".project-block");
-
-$(function(){
-    let inherentFieldsContainer = $('#inherent-fields-container');
-    $("#id_category").on("change", function() {
-        let selectedValue = $(this).val();
-        inherentFieldsContainer.empty();
-        $.ajax({
-            type:"GET",
-            url:$("#create-post").attr("action"),
-            data : {
-                "category": selectedValue
-            },
-            dataType: 'json',
-            success:function(response){
-                inherentFieldsContainer.append(response.additional_fields);
-            },
-            failure: function() {console.log("Error");}
-        });
-    });
-});
-
 
 $(function() {
     $(".latest-nav").click(function() {
@@ -91,12 +67,3 @@ $(function() {
         });
     });
 });
-
-function PreviewImage() {
-    var oFReader = new FileReader();
-    oFReader.readAsDataURL(document.getElementById("id_thumbnail").files[0]);
-
-    oFReader.onload = function (oFREvent) {
-        document.getElementById("preview-image").src = oFREvent.target.result;
-    };
-};
