@@ -9,7 +9,7 @@
 <div class="project-container">
     <div class="project-list">
         {% for project in projects %}
-        <a href="{% url 'project-detail' project.id %}">
+        <a href="{% url 'project-detail' project.model_id %}">
             <div class="project-box">
                 <div class="project-thumbnail">
                     <img src="{{ project.thumbnail.url }}">
@@ -37,19 +37,21 @@
         {% csrf_token %}
         <div class="form-field">Title</div>
         <div id="form-title">{{ form.title }}</div>
-        <div class="form-field">Title</div>
+        <div class="form-field">Category</div>
         <div id="form-category">{{ form.category }}</div>
         <div class="form-field">Description</div>
         <div id="form-description">{{ form.description }}</div>
+        <div class="form-field">Main Content</div>
+        <div id="form-maincontent">{{ form.maincontent }}</div>
+        <div class="form-field">Topic</div>
+        <div id="form-topic">{{ form.topic }}</div>
         <div class="form-field">Thumbnail</div>
         <div id="form-thumbnail">{{ form.thumbnail }}<span>Upload</span></div>
         <div id="basepost-preview-img">
             <img id="preview-image"/>
         </div>
-        <div class="form-field">Topic</div>
-        <div id="form-topic">{{ form.topic }}</div>
+        
         <button class="button" type="submit">Submit</button>
-        <button class="button" type="button" id="add-field">Add Section</button>
     </form>
 </section>
 {% endif %}

@@ -1,7 +1,7 @@
 
 from django.shortcuts import render,redirect
 from django.views.generic.base import TemplateView
-from .models import ProjectPost,ProjectPostSection
+from .models import ProjectPost
 from .forms import ProjectForm
 from django.http import JsonResponse
 
@@ -44,7 +44,6 @@ class ProjectDetailView(TemplateView):
     def get_context_data(self, *args,**kwargs):
         
         context=super().get_context_data(*args,**kwargs)
-        project = ProjectPost.objects.get(pk=kwargs.get('pk'))
-        context['projectMain']= project
-        context['sections']=ProjectPostSection.objects.filter(belongPost=kwargs.get('pk'))
+        context['project']= ProjectPost.objects.get(pk=kwargs.get('pk'))
+
         return context
