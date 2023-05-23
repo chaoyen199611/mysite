@@ -11,3 +11,6 @@ class ProjectForm(BaseForm):
             'thumbnail': forms.ClearableFileInput(attrs={'onchange': 'PreviewImage()'})
         }
 
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.fields["description"] = forms.CharField(widget=forms.Textarea)

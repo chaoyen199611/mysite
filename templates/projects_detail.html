@@ -1,4 +1,7 @@
 {% extends "base.html" %}
+{% load markdown_filters %}
+
+
 {% load static %}
 {% block projectdetail_style %}
 <link rel="stylesheet" type="text/css" href="{% static 'css/projectdetail.css' %}">
@@ -7,18 +10,10 @@
 {% block projectdetail %}
 <div class="projectcontainer">
     <div class="project">
-        <h2>{{ projectMain.title }}</h2>
-        <div class="project-desc">{{ projectMain.description }}</div>
-        {% for section in sections %}
-        <h3>{{ section.section_title }}</h3>
-        <hr>
-        {% if section.section_image.url != "null" %}
-            <img class="section-image" src="{{ section.section_image.url }}" >
-        {% endif %}
-        <div class="project-text">{{ section.section_context }}</div>
+        <h2>{{ project.title }}</h2>
+        <div class="project-desc">{{ project.description }}</div>
+        {{ project.maincontent|markdown_tag }}
 
-        
-        {% endfor %}
 
     </div>
 </div>

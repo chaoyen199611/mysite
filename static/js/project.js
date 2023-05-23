@@ -2,7 +2,12 @@ let section = 0;
 $(document).ready(function() {
     let form = $('#create-post');
     let addButton = $('#add-field');
-    
+    let textarea = $('#id_maincontent');
+
+    textarea.on('input', function() {
+        this.style.height = 'auto';
+        this.style.height = (this.scrollHeight) + 'px';
+    });
     addButton.click(function() {
         section++;
         console.log(section);

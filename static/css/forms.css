@@ -5,6 +5,7 @@
 #id_maincontent{
     width: 100%;
     height: 100%;
+    resize: none;
 }
 
 #id_description{
@@ -21,8 +22,8 @@
 
 #preview-image{
     object-fit: cover;
-    width: 30%;
-    height: 30%; 
+    width: 50%;
+    height: 50%; 
     background-color:grey
 }
 
