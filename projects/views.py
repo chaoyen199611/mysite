@@ -3,6 +3,8 @@ from django.shortcuts import render,redirect
 from django.views.generic.base import TemplateView
 from .models import ProjectPost
 from .forms import ProjectForm
+import datetime
+from datetime import date
 from django.http import JsonResponse
 
 
@@ -24,13 +26,17 @@ class ProjectPageView(TemplateView):
         form = ProjectForm(request.POST,request.FILES)  
         print(form.fields)
         if form.is_valid():
-                for key in request.POST:
-                    if key.startswith('field'):
-                        field_value = request.POST[key]
-                        print(field_value)
-                print(form.cleaned_data["title"])
-                print(form.cleaned_data["category"])
-
+                instance = ProjectPost(
+                    title = form.cleaned_data["title"],
+                    category = form.cleaned_data["category"],
+                    description = form.cleaned_data["description"],
+                    post_time = date.today(),
+                    thumbnail = form.cleaned_data["thumbnail"],
+                    topic = form.cleaned_data["topic"],
+                    image = form.cleaned_data["image"],
+                    maincontent = form.cleaned_data["maincontent"]
+                )
+                instance.save()
                 return redirect('project-home')
         else:
                 print(form.errors)

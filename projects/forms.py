@@ -6,7 +6,7 @@ class ProjectForm(BaseForm):
 
     class Meta:
         model = ProjectPost
-        fields = BaseForm.Meta.fields + ["topic","maincontent"]
+        fields = BaseForm.Meta.fields + ["topic","maincontent","image"]
         widgets = {
             'thumbnail': forms.ClearableFileInput(attrs={'onchange': 'PreviewImage()'})
         }

@@ -5,8 +5,7 @@ import markdown
 
 register = template.Library()
 
-@register.filter(is_safe=True)
+@register.filter
 @stringfilter
-def markdown_tag(value):
-    extensions = ['markdown.extensions.fenced_code']
-    return mark_safe(markdown.markdown(value, extensions=extensions))
+def markdown_tags(value):
+    return mark_safe(markdown.markdown(value, extensions=['extra','codehilite']))

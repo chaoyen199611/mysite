@@ -156,3 +156,21 @@ EMAIL_USE_SSL = True
 EMAIL_HOST_USER = env('EMAIL_USER')
 EMAIL_HOST_PASSWORD = env('EMAIL_PASS')
 
+MARKDOWNIFY = {
+    "default": {
+        "MARKDOWN_EXTENSIONS": [
+            'markdown.extensions.extra',  # This includes fenced code, and others
+            'markdown.extensions.codehilite',
+        ],
+        "WHITELIST_TAGS": [
+            'code',
+            'pre',
+            'span',
+            'div',
+        ],
+        "WHITELIST_ATTRS": [
+            'class',
+            ],
+    }
+}
+
