@@ -1,4 +1,5 @@
 $(document).ready(function(){
+    $(".homenavbar").addClass("active");
     const category = document.querySelectorAll("#post-category").forEach(function (el){
         console.log(el.textContent);
         if(el.textContent == "Project"){

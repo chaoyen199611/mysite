@@ -4,6 +4,8 @@ $(document).ready(function() {
     let addButton = $('#add-field');
     let textarea = $('#id_maincontent');
 
+    $(".projectnavbar").addClass("active");
+
     textarea.on('input', function() {
         this.style.height = 'auto';
         this.style.height = (this.scrollHeight) + 'px';

@@ -23,7 +23,7 @@ p,h2,h3,.form-field{
 }
 
 .navbar-nav > li{
-    color: black;
+    transition: background-color 0.3s ease;
     margin-left: 2%;
     margin-right: 2%;
 }
@@ -34,7 +34,7 @@ p,h2,h3,.form-field{
 }
 
 .navbar-nav > li:hover {
-    background-color: black;
+    background-color: #5293BB;
 }
 
 
@@ -83,4 +83,9 @@ footer {
     display: inline-block;
     padding: 6px 12px;
     cursor: pointer;
+}
+
+.active {
+    background-color: #5293BB;
+    color: black !important;
 }
