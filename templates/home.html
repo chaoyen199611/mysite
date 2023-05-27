@@ -10,7 +10,9 @@
 <section id="one">
     <div class="intro">
         <div>
-            <img class="profile-image" src="{% static 'img/joey.png'%}">
+            <video class="profile-vid"autoplay loop muted name="Video Name">
+                <source src="{% static 'img/balls.mp4'%}">
+            </video>
         </div>
         <div class="about-me">
             <p>{% lorem 1 b %}</p>
@@ -18,12 +20,13 @@
                 <a href="https://github.com/chaoyen199611" target="_blank"><img class="social-img" src="{% static 'img/github.png'%}"></a>
                 <a href="https://www.linkedin.com/in/joey-huang-9b7357189/" target="_blank"><img class="social-img" src="{% static 'img/linkedin.png'%}"></a>
                 <a href="https://www.instagram.com/chaoyen_huang/" target="_blank"><img class="social-img" src="{% static 'img/instagram.png'%}"></a>
-                <a href="https://discord.gg/94uaEvaEC9" target="_blank"><img src="https://discordapp.com/api/guilds/889508680733691954/widget.png?style=shield" style="float:right;margin-right: 0.5em" alt=""></a>
                 <button class="button" style="vertical-align:middle"><span>My CV </span></button>
             </div>
         </div>
-    </div>
+        <iframe src="https://discord.com/widget?id=889508680733691954&theme=dark" width="350" height="500" allowtransparency="true" frameborder="0" sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"></iframe>
 </section>
+    </div>
+    
 
 <section id="two">
     <div class="latest-project">

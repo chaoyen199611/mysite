@@ -10,10 +10,12 @@
 p {
   margin: 0;
 }
-.profile-image{
+.profile-vid{
   display: block;
   margin-left: auto;
   margin-right: auto;
+  width: 50%;
+  height: 50%;
 }
 
 .intro{
@@ -25,6 +27,8 @@ p {
 .about-me{
   padding-top: 5%;
   width: 60vw;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .latest-project{
