@@ -3,29 +3,36 @@
 html,body{
     background-color: #003A6B;
     margin:0;
+    color: aliceblue;
     font-family: 'Noto Sans', sans-serif;
 }
 
 section {
     min-height: 50vh;
-    display: flex;
+    width: 60vw;
     align-items: center;
     justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 p,ul {
     margin: 0;
-    padding: 0
+    padding: 0;
+    font-size: 1.2rem;
 }
 
-p,h2,h3,.form-field{
-    color: aliceblue;
+h2{
+    margin-top: 5%;
 }
 
 .navbar-nav > li{
     transition: background-color 0.3s ease;
+    border-radius: 10px;
     margin-left: 2%;
     margin-right: 2%;
+    padding-left: 10px;
+    padding-right: 10px;
 }
 
 .navbar-nav{
