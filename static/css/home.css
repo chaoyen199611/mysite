@@ -180,4 +180,26 @@ p span{
   color : black;
 }
 
+@media (max-width:990px){
+  .intro,.about,.interest{
+    display: block;
+    min-height: 100vh;
+    
+  }
+
+  .about-me,.aoi{
+    padding-top: 5%;
+    width: 100%;
+    margin-top: auto;
+    margin-bottom: auto;
+  }
+  .profile-vid{
+    width: 100%;
+    margin-top: auto;
+    margin-bottom: auto;
+    overflow: hidden;
+    clip-path: inset(1px 1px)
+  }
+}
+
 
