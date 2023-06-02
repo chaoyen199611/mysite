@@ -12,18 +12,21 @@
         <a href="{% url 'project-detail' project.id %}">
             <div class="project-box">
                 <div class="project-thumbnail">
-                    <img src="{{ project.thumbnail.url }}">
+                    <img class = "thumbnail" src="{{ project.thumbnail.url }}">
                 </div>
-                <div class="project-title">
-                    {{ project.title }}
+                <div class="project-content">
+                    <div class="project-title">
+                        {{ project.title }}
+                    </div>
+                    <hr>
+                    <div class="project-field">
+                        {{ project.topic }}
+                    </div>
+                    <div class="project-descr">
+                        {{ project.description }}
+                    </div>
                 </div>
-                <hr>
-                <div class="project-field">
-                    {{ project.topic }}
-                </div>
-                <div class="project-descr">
-                    {{ project.description }}
-                </div>
+                
             </div>
         </a>
         {% endfor %}

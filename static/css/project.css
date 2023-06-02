@@ -1,6 +1,7 @@
 .project-box{
-    background-color: yellow;
     margin-top: 3%;
+    display: flex;
+    border: solid;
 }
 
 .project-list{
@@ -14,4 +15,17 @@
 a{
     text-decoration: none;
     color: aliceblue;
+}
+
+.project-thumbnail{
+    width: 30%;
+}
+
+.thumbnail{
+    object-fit: cover;
+    width: 100%;
+}
+
+.project-content{
+    margin-left: 5%;
 }
