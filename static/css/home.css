@@ -27,10 +27,6 @@
   margin-bottom: auto;
 }
 
-.latest-project{
-  width: 60vw;
-}
-
 .socials{
   margin-top: 2%;
 }
@@ -86,7 +82,6 @@
   display: block;
   justify-content: center;
   color: aliceblue;
-  width: 60vw;
 }
 
 .post-link{

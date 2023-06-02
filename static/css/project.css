@@ -28,4 +28,32 @@ a{
 
 .project-content{
     margin-left: 5%;
+    margin-right: 5%;
+    margin-top: 2%;
+    width: 100%;
+}
+
+.project-field{
+    display: inline-block;
+    color: #fff;
+    position: relative;
+    border-top-left-radius: 4px;
+    border-bottom-left-radius: 4px;
+    text-decoration: none;
+}
+
+.project-field::before {
+    background: #fff;
+    content: "";
+    display: inline-block;
+}
+
+.project-field:after {
+    display: inline-block;
+    border: 12px solid;
+    border-color: transparent transparent transparent aqua;
+    position: absolute;
+    right: -24px;
+    content: "";
+    display: inline-block;
 }
