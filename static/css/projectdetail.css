@@ -32,6 +32,27 @@ hr{
     color : aliceblue;
 }
 
-.section-image{
-    
+img{
+    width: 50%;
+}
+
+.project-content{
+    width: 80%;
+}
+
+.project-box{
+    display: flex;
+}
+
+.project-article-nav{
+    width: 20%;
+    margin-left: 5%;
+
+}
+
+.sticky {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    padding-top: 60px;
 }

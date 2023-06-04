@@ -13,12 +13,22 @@
     <div class="project">
         <h2>{{ project.title }}</h2>
         <div class="project-desc">{{ project.description }}</div>
-        <div class="project-content">
-            {{ project.maincontent|markdown_tags }}
+        <div class="project-box">
+            <div class="project-content">
+                {{ project.maincontent|markdown_tags }}
+            </div>
+            <div class="project-article-nav">
+                <nav id="article-nav">
+                    <ul style="list-style-type:none;">
+                        <li><a href="#section-one">Section 1</a></li>
+                        <li><a href="#section-two">Section 2</a></li>
+                        <li><a href="#">Services</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+                </nav>
+            </div>
         </div>
         
-
-
     </div>
 </div>
 {% endblock %}
