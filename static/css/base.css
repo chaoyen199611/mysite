@@ -113,6 +113,7 @@ footer {
     opacity: 0;
     visibility: hidden;
     z-index: 1000;
+    text-decoration: none;
 }
 #backtotopbtn::after {
     content: "\f077";
