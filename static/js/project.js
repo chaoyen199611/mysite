@@ -7,8 +7,10 @@ $(document).ready(function() {
     $(".projectnavbar").addClass("active");
 
     textarea.on('input', function() {
+        console.log(this.scrollHeight); 
         this.style.height = 'auto';
         this.style.height = (this.scrollHeight) + 'px';
+        
     });
 
     const category = document.querySelectorAll(".project-field").forEach(function (el){

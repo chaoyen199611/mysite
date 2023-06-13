@@ -6,6 +6,8 @@ from .forms import ProjectForm
 import datetime
 from datetime import date
 from django.http import JsonResponse
+import markdown
+from bs4 import BeautifulSoup
 
 
 class ProjectPageView(TemplateView):
@@ -51,5 +53,21 @@ class ProjectDetailView(TemplateView):
         
         context=super().get_context_data(*args,**kwargs)
         context['project']= ProjectPost.objects.get(pk=kwargs.get('pk'))
-
+        instance = ProjectPost.objects.get(pk=kwargs.get('pk'))
+        markdown_content = instance.maincontent
+        html_content = markdown.markdown(markdown_content, extensions=['toc'])
+        headings=[]
+        headings = self.get_markdown_headings(html_content)
+        print(headings)
+        context['headings'] = headings
+        
         return context
+    
+    def get_markdown_headings(self,markdown_content):
+    # Convert the Markdown content to HTML
+        html_content = markdown.markdown(markdown_content)
+        soup = BeautifulSoup(html_content, 'html.parser')
+        headings = soup.find_all(['h1'])
+        heading_texts = [heading.get_text() for heading in headings]
+
+        return heading_texts

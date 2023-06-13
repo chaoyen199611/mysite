@@ -20,10 +20,9 @@
             <div class="project-article-nav">
                 <nav id="article-nav">
                     <ul style="list-style-type:none;">
-                        <li><a href="#section-one">Section 1</a></li>
-                        <li><a href="#section-two">Section 2</a></li>
-                        <li><a href="#">Services</a></li>
-                        <li><a href="#">Contact</a></li>
+                        {% for heading in headings %}
+                        <li><a href="#{{ heading }}">{{heading}}</a></li>
+                        {% endfor %}
                     </ul>
                 </nav>
             </div>

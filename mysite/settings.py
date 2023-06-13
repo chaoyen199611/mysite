@@ -162,6 +162,7 @@ MARKDOWNIFY = {
         "MARKDOWN_EXTENSIONS": [
             'markdown.extensions.extra',  # This includes fenced code, and others
             'markdown.extensions.codehilite',
+            'markdown.extensions.toc',
         ],
         "WHITELIST_TAGS": [
             'code',
