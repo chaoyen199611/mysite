@@ -1,5 +1,10 @@
 let navbar = document.getElementById("article-nav");
 
+$(document).ready(function(){
+    $(".projectnavbar").addClass("active");
+});
+
+
 
 let sticky = navbar.offsetTop;
 

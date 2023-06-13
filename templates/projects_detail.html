@@ -11,11 +11,15 @@
 {% block projectdetail %}
 <div class="projectcontainer">
     <div class="project">
-        <h2>{{ project.title }}</h2>
-        <div class="project-desc">{{ project.description }}</div>
+        <h1>{{ project.title }}</h1>
+        <div class="project-desc">{{ project.description }}
+        </div>
+        <div class="article-info">
+            {{ project.post_time }}&#128221;{{ readtime }}
+        </div>
         <div class="project-box">
             <div class="project-content">
-                {{ project.maincontent|markdown_tags }}
+                {{ project.maincontent|markdown_tag }}
             </div>
             <div class="project-article-nav">
                 <nav id="article-nav">

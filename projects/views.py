@@ -8,6 +8,7 @@ from datetime import date
 from django.http import JsonResponse
 import markdown
 from bs4 import BeautifulSoup
+from readtime import of_html
 
 
 class ProjectPageView(TemplateView):
@@ -56,18 +57,15 @@ class ProjectDetailView(TemplateView):
         instance = ProjectPost.objects.get(pk=kwargs.get('pk'))
         markdown_content = instance.maincontent
         html_content = markdown.markdown(markdown_content, extensions=['toc'])
-        headings=[]
-        headings = self.get_markdown_headings(html_content)
-        print(headings)
-        context['headings'] = headings
-        
+        context['headings'] = self.get_markdown_headings(html_content)
+        context['readtime'] = of_html(html_content)
         return context
     
     def get_markdown_headings(self,markdown_content):
     # Convert the Markdown content to HTML
         html_content = markdown.markdown(markdown_content)
         soup = BeautifulSoup(html_content, 'html.parser')
-        headings = soup.find_all(['h1'])
+        headings = soup.find_all(['h2'])
         heading_texts = [heading.get_text() for heading in headings]
 
         return heading_texts

@@ -9,8 +9,6 @@
 
 .project{
     width: 60vw;
-    
-    
 }
 
 h3{
@@ -24,7 +22,7 @@ hr{
 
 .project-desc{
     font-size: 1rem;
-    color: lightgray
+    color: lightgrey;
 }
 
 .project-text{
@@ -41,12 +39,14 @@ img{
 }
 
 .project-box{
+    margin-top: 60px;
     display: flex;
 }
 
 .project-article-nav{
     width: 20%;
     margin-left: 5%;
+    margin-top: 40px;
 
 }
 
@@ -55,4 +55,22 @@ img{
     top: 0;
     width: 100%;
     padding-top: 60px;
+}
+
+.article-info{
+    margin-top: 2%;
+}
+
+@media (max-width:990px){
+    .project{
+        width: 80vw;       
+    }
+
+    .project-content{
+        width: 100%;
+    }
+
+    .project-article-nav{
+        display: none;
+    }
 }

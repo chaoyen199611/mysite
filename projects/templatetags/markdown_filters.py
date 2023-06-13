@@ -7,5 +7,5 @@ register = template.Library()
 
 @register.filter
 @stringfilter
-def markdown_tags(value):
+def markdown_tag(value):
     return mark_safe(markdown.markdown(value, extensions=['extra','codehilite']))
