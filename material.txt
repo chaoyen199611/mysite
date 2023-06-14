@@ -1,0 +1,5 @@
+color scheme:
+blue
+dark to light:
+
+#003A6B > #1B5886 > #3776A1 > #5293BB > #6EB1D6 > #89CFF1

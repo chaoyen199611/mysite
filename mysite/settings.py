@@ -36,12 +36,12 @@ ALLOWED_HOSTS = ['joeytech.io','www.joeytech.io']
 # Application definition
 
 INSTALLED_APPS = [
-    'review',
     'photo',
     'blog',
     'travel',
     'core',
     'projects',
+    'markdown',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -132,6 +132,7 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
+
 STATIC_ROOT = os.path.join(BASE_DIR,'static')
 
 MEDIA_URL = 'media/'
@@ -155,8 +156,9 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 MARKDOWNIFY = {
     "default": {
         "MARKDOWN_EXTENSIONS": [
-            'markdown.extensions.extra',  # This includes fenced code, and othe>
+            'markdown.extensions.extra',  # This includes fenced code, and others
             'markdown.extensions.codehilite',
+            'markdown.extensions.toc',
         ],
         "WHITELIST_TAGS": [
             'code',

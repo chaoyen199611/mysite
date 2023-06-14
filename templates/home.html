@@ -1,156 +1,134 @@
 {% extends "base.html" %}
+{% load markdown_filters %}
 {% load static %}
 {% block homestyle %}
 <link  rel="stylesheet" type="text/css" href="{% static 'css/home.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'css/forms.css' %}">
 {% endblock %}
-
 
 {% block homepage %}
 <section id="one">
     <div class="intro">
-        <div>
-            <img class="profile-image" src="{% static 'img/joey.png'%}">
-        </div>
+        <video class="profile-vid" autoplay loop muted name="Video Name">
+            <source src="{% static 'img/balls.mp4'%}">
+        </video>
         <div class="about-me">
-            <p>{% lorem 1 b %}</p>
+            <h1>Hello! I'm Joey Huang.</h1>
+            <p> I graduated from National Sun Yat-Sen University's Department of Computer
+                Science and Engineering in the class of 2023, located in Kaosiung, Taiwan.
+            </p>
+            
+        </div>
+    </div>
+    <div class="about">
+        <div class="about-me">
+            <h1>About Me</h1>
+            <hr>
+            <p>As a recent university graduate, I am still exploring and searching for the fields 
+                of computer science that I am truly passionate about. Don't get me wrong, 
+                I really enjoy building things through programming and want to dedicate myself 
+                to the software world. During my four years in college, I completed several 
+                projects. These included using Neural Architecture Search (NAS) for predicting 
+                demand in a Bike Sharing System (BSS), as well as various course projects. One 
+                such project was developing a basic smart plant self care system with Arduino.</p>
+            <br>
+            <p>I want to study or work abroad in the future. Doing so will help me become a 
+            global citizen with a global mindset, ready to overcome different challenges. 
+            Although I have been living in Taiwan since I was born, I don’t want to limit my 
+            life experiences only to this country. I aspire to explore the world and push myself 
+            to new heights.</p>
+            <br>
+            <p>This website is a place for me to upload my recent researches and side projects. 
+            also I will update some personal thought on areas that I’m interesting in. Below 
+            this section, I have provided some links, including my CV and social medias. 
+            If you are interested in what I do or just want to have a chat, feel free to 
+            contact me through those links. I am always happy to meet new friends! </p>
             <div class="socials"> 
                 <a href="https://github.com/chaoyen199611" target="_blank"><img class="social-img" src="{% static 'img/github.png'%}"></a>
                 <a href="https://www.linkedin.com/in/joey-huang-9b7357189/" target="_blank"><img class="social-img" src="{% static 'img/linkedin.png'%}"></a>
                 <a href="https://www.instagram.com/chaoyen_huang/" target="_blank"><img class="social-img" src="{% static 'img/instagram.png'%}"></a>
-                <a href="https://discord.gg/94uaEvaEC9" target="_blank"><img src="https://discordapp.com/api/guilds/889508680733691954/widget.png?style=shield" style="float:right;margin-right: 0.5em" alt=""></a>
-                <button class="button" style="vertical-align:middle"><span>My CV </span></button>
+                <a href="#" target="_blank"><img class="social-img" src="{% static 'img/cv.png'%}"></a>
             </div>
+        </div>
+        <video class="profile-vid" autoplay loop muted name="Video Name">
+            <source src="{% static 'img/balls.mp4'%}">
+        </video>
+    </div>
+    <div class="interest">
+        <div class = "aoi-img-container">
+            <img class="aoi-img" src="{% static 'img/city.jpg'%}">
+        </div>
+        <div class="aoi">
+            <h1>Area of Interest</h1>
+            <hr>
+            <h2>Smart City</h2>
+            <p>Since I was born, I have always lived in the city but never thought about or been involved in city planning, 
+                transportation management, or related fields. The only connection I have with the city is my enjoyment 
+                of simulation games related to cities, such as City Skylines, Transport Fever 2, and others. 
+                I like building my own city, but I always encountered many problems due to poor planning. 
+                Recently, both domestic and foreign media reported on the terrible situation of transportation 
+                in Taiwan, which made me started to think about how to apply what I have learned to improve 
+                city planning and transportation and also considered how I could get into this field.</p>
+            <br>
+            <p>Thanks to the rapid improvement of computing capabilities, artificial intelligence (AI) has 
+                started to emerge and become involved in our everyday lives. These fields, such 
+                as automobile, traffic prediction and sensor technologies, create magnificent 
+                potential for smart city development. I believe that in the near future, we can not 
+                only improve city transportation, but also innovate a completely different lifestyle 
+                in cities than what we have today.</p>
+            <h2>Deep Learning</h2>
+            <p>I am amazed by what ChatGPT can accomplish now, and I am also interested in how it was 
+                built and what the fundamentals of this LLM are. Additionally, I am interested in Graph 
+                Neural Networks (GNN), because I believe most real-world problems can be turned into 
+                graphs. If we can use deep learning to properly solve graph-related problems, as we 
+                did with image recognition and natural language processing (NLP), it could be a game 
+                changer.</p>
         </div>
     </div>
 </section>
-<h2 style="text-align: center;">Latest Post</h2>
+
 <section id="two">
-    <div class="latest">
-        <div class="sidebar">
-            <a href="#" class="w3-bar-item w3-button">All</a>
-            <a href="#" class="w3-bar-item w3-button">Projects</a>
-            <a href="#" class="w3-bar-item w3-button">Travel</a>
-            <a href="#" class="w3-bar-item w3-button">Photographic</a>
-            <a href="#" class="w3-bar-item w3-button">Reviews</a>
-        </div>
-        <div class="card-list">
-            <div class="row">
-                {% for post in posts1 %}
-                <div class="column">
-                    <div class="card">
-                        {% if post.category == "Travel" %}
-                            <div class="category-t">
-                                <div class="category-tag">
-                                    {{ post.category }}
-                                </div>
-                            </div>
-                        {% elif post.category == "Photo" %}
-                            <div class="category-p">
-                                <div class="category-tag">
-                                    {{ post.category }}
-                                </div>
-                            </div>
-                        {% elif post.category == "Blog" %}
-                            <div class="category-b">
-                                <div class="category-tag">
-                                    {{ post.category }}
-                                </div>
-                            </div>
-                        {% else %}
-                            <div class="category-pr">
-                                <div class="category-tag">
-                                    {{ post.category }}
-                                </div>
-                            </div>
-                 
-                        <img src="{{ post.thumbnail.url }}" class="card-image">
-                        <p class="card-desc">{{ post.description }}</p>
-                        <div class="card-content">
-                            <div class="title">
-                                <p><span>{{ post.title }}</span></p>
-                            </div>
-                            {% if post.category == "Travel" %}
-                                <div class="location">
-                                    <p><span>{{ post.location }}, {{ post.country }}</span></p>
-                                </div>
-                            {% elif post.category == "Photo" %}
-                                <div class="camera">
-                                    <p><span>{{ post.camera }}</span></p>
-                                </div>
-                            {% elif post.category == "Blog" %}
-                            {% else %}
-                                <div class="project-card-content">
-                                    <p><span>{{ post.topic }}</span></p>
-                                </div>
-                            {% endif %}
-                            
-                            <div class="update-time">
-                                <p><span>{{ post.post_time }}</span></p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                {% endfor %}
+    <div class="latest-project">
+        <h2 style="text-align: center;" id="two-h2">Latest Post</h2>
+        <div class="latest">
+            <div class="sidebar" data-url="{% url 'home-page' %}">
+                <ul>
+                    <li class="latest-nav active">All</li>
+                    <li class="latest-nav">Projects</li>
+                    <li class="latest-nav">Blogs</li>
+                    <li class="latest-nav">Photos</li>
+                    <li class="latest-nav">Travel</li>
+                </ul>
             </div>
-            <div class="row">
-                {% for post in posts2 %}
-                <div class="column">
-                    <div class="card">
-                        {% if post.category == "Travel" %}
-                            <div class="category-t">
-                                <div class="category-tag">
-                                    {{ post.category }}
-                                </div>
-                            </div>
-                        {% elif post.category == "Photo" %}
-                            <div class="category-p">
-                                <div class="category-tag">
-                                    {{ post.category }}
-                                </div>
-                            </div>
-                        {% elif post.category == "Blog" %}
-                            <div class="category-b">
-                                <div class="category-tag">
-                                    {{ post.category }}
-                                </div>
-                            </div>
-                        {% else %}
-                            <div class="category-pr">
-                                <div class="category-tag">
-                                    {{ post.category }}
-                                </div>
-                            </div>
-                        {% endif %}
-                        <img src="{{ post.thumbnail.url }}" class="card-image">
-                        <p class="card-desc">{{ post.description }}</p>
-                        <div class="card-content">
-                            <div class="title">
-                                <p><span>{{ post.title }}</span></p>
-                            </div>
-                            {% if post.category == "Travel" %}
-                                <div class="location">
-                                    <p><span>{{ post.location }}, {{ post.country }}</span></p>
-                                </div>
-                            {% elif post.category == "Photo" %}
-                                <div class="camera">
-                                    <p><span>{{ post.camera }}</span></p>
-                                </div>
-                            {% elif post.category == "Project" %}
-                                <div class="project-card-content">
-                                    <p><span>{{ post.topic }}</span></p>
-                                </div>
-                            {% elif post.category == "Blog" %}
-                            {% else %}
-                            {% endif %}
-                            <div class="update-time">
-                                <p><span>{{ post.post_time }}</span></p>
-                            </div>
-                        </div>
+            <div class="card-list">
+                {% for post in posts %}
+                <div class="project-block">
+                    <div class="card-image-container">
+                        <img class="card-image" src="{{ post.thumbnail.url }}" >
                     </div>
+                    <div class="card-content">
+                        <div id="post-category">{{ post.category }}</div>
+                        {% if post.category == "Project" %}
+                            <a class="post-link" href="{% url 'project-detail' post.id %}">
+                        {% elif post.category == "Travel" %}
+                            <a class="post-link" href="{% url 'travel-detail' post.id %}">
+                        {% elif post.category == "Blog" %}
+                            <a class="post-link" href="{% url 'blog-page' %}">
+                        {% elif post.category == "Photo" %}
+                            <a class="post-link" href="#">
+                        {% endif %}
+                        {{ post.title }}</a>
+                    </div>
+                    <div class="update-time">{{ post.post_time}}</div>
                 </div>
+                
                 {% endfor %}
             </div>
         </div>
     </div>
 </section>
 {% endblock %}
+
+{% block homepagescript %}
+<script defer src="{% static 'js/home.js' %}"></script>
+{%endblock%}

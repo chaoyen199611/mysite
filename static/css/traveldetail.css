@@ -1,0 +1,33 @@
+
+
+.projectcontainer{
+    margin-top: 5%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.project{
+    width: 60vw;
+    
+    
+}
+
+h3{
+    margin-top: 2%;
+    margin-bottom: 2%;
+}
+
+hr{
+    border-top: 1px solid aliceblue;
+}
+
+.project-desc{
+    font-size: 1rem;
+    color: lightgray
+}
+
+.project-text{
+    font-size: 1.2rem;
+    color : aliceblue;
+}

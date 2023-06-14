@@ -1,34 +1,58 @@
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Noto+Sans&display=swap');
+
 html,body{
-    background-color: black;
+    background-color: #003A6B;
     margin:0;
+    color: aliceblue;
+    font-family: 'Noto Sans', sans-serif;
 }
 
 section {
-    min-height: 100vh;
-    display: flex;
+    min-height: 50vh;
+    width: 60vw;
     align-items: center;
     justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
 }
 
-p {
+p,ul {
     margin: 0;
-  }
+    padding: 0;
+    font-size: 1.2rem;
+    text-align: justify;
+}
 
-.navbar-nav,p,h2{
-    color: aliceblue;
-    font-family: "Gill Sans", sans-serif;
+h2{
+    margin-top: 5%;
+}
+
+.navbar-nav > li{
+    transition: background-color 0.3s ease;
+    border-radius: 10px;
+    margin-left: 2%;
+    margin-right: 2%;
+    padding-left: 10px;
+    padding-right: 10px;
 }
 
 .navbar-nav{
-    color : green;
+    display: flex;
+    justify-content: center;
 }
-
 
 .navbar-nav > li:hover {
-    background-color: lightskyblue;
-    border-radius: 30px;
-    color: black;
+    background-color: #5293BB;
 }
+
+
+.navbar-nav li > a{
+    color: aliceblue;
+    font-size: 1.2rem;
+    text-decoration: none;
+}
+
+
 
 .contact-container {
     display: flex;
@@ -60,4 +84,70 @@ footer {
     justify-content: center;
     padding: 5vh;
     color: #fff;
+}
+
+.custom-file-upload {
+    border: 1px solid #ccc;
+    display: inline-block;
+    padding: 6px 12px;
+    cursor: pointer;
+}
+
+.active {
+    background-color: #5293BB;
+    color: black !important;
+}
+
+#backtotopbtn {
+    display: inline-block;
+    background-color: #FF9800;
+    width: 50px;
+    height: 50px;
+    text-align: center;
+    border-radius: 50%;
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    transition: background-color .3s, 
+      opacity .5s, visibility .5s;
+    opacity: 0;
+    visibility: hidden;
+    z-index: 1000;
+    text-decoration: none;
+}
+#backtotopbtn::after {
+    content: "\f077";
+    font-family: FontAwesome;
+    font-weight: normal;
+    font-style: normal;
+    font-size: 2em;
+    line-height: 50px;
+    color: #fff;
+}
+#backtotopbtn:hover {
+    cursor: pointer;
+    background-color: #333;
+}
+#backtotopbtn:active {
+    background-color: #555;
+}
+#backtotopbtn.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+@media (max-width:990px){
+    section {
+        min-height: 50vh;
+        width: 90vw;
+        align-items: center;
+        justify-content: center;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    p {
+        text-align: left;
+    }
+    
 }
