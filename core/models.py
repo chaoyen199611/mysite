@@ -14,7 +14,7 @@ class PostBase(models.Model):
     )
     title = models.CharField(max_length=100)
     category = models.CharField(max_length=7,choices=CATETORIES)
-    description = models.CharField(max_length=500)
+    description = models.TextField(null=True,blank=True, default='default')
     post_time = models.DateField()
     thumbnail = models.ImageField(null=True,blank=True,upload_to="images/")
 
