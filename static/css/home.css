@@ -19,6 +19,18 @@
   min-height: 100vh;
 }
 
+.aoi-img-container{
+  width: 40%;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+.aoi-img{
+  object-fit: cover;
+  width: 100%;
+  
+}
+
 .about-me,.aoi{
   padding-top: 5%;
   width: 60%;
