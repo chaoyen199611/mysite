@@ -160,7 +160,7 @@ EMAIL_HOST_PASSWORD = env('EMAIL_PASS')
 MARKDOWNIFY = {
     "default": {
         "MARKDOWN_EXTENSIONS": [
-            'markdown.extensions.extra',  # This includes fenced code, and others
+            #'markdown.extensions.extra',  # This includes fenced code, and others
             'markdown.extensions.codehilite',
             'markdown.extensions.toc',
         ],
