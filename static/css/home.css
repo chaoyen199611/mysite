@@ -168,6 +168,9 @@ p span{
   margin-top: 5%;
   border-bottom: 2px solid aliceblue;
 }
+.aoi-img-responsive{
+  display: none;
+}
 
 
 .sidebar > ul > li {
@@ -206,6 +209,13 @@ p span{
     margin-bottom: auto;
     overflow: hidden;
     clip-path: inset(1px 1px)
+  }
+  .aoi-img{
+    display: none;
+  }
+  .aoi-img-responsive{
+    display:block;
+    width: 100%;
   }
 }
 
