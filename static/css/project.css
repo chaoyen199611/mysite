@@ -1,7 +1,7 @@
 .project-box{
     margin-top: 3%;
     display: flex;
-    border: solid;
+    height: 40vh;
 }
 
 .project-list{
@@ -24,6 +24,7 @@ a{
 .thumbnail{
     object-fit: cover;
     width: 100%;
+    height: 100%;
 }
 
 .project-content{

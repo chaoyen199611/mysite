@@ -19,6 +19,22 @@
   min-height: 100vh;
 }
 
+.aoi-img-container{
+  width: 40%;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+.aoi-img-responsive{
+  display: none;
+}
+
+.aoi-img{
+  object-fit: cover;
+  width: 100%;
+  
+}
+
 .about-me,.aoi{
   padding-top: 5%;
   width: 60%;
@@ -194,6 +210,13 @@ p span{
     margin-bottom: auto;
     overflow: hidden;
     clip-path: inset(1px 1px)
+  }
+  .aoi-img{
+    display: none;
+  }
+  .aoi-img-responsive{
+    display:block;
+    width: 100%;
   }
 }
 
