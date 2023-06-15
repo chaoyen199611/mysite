@@ -1,33 +1,45 @@
-#two{
-  background-color: none;
-  background-image: url('https://raw.githubusercontent.com/hosseinnabi-ir/Responsive-Glass-Sidebar-using-CSS-and-JavaScript/Main/images/bg.jpg');
-  background-size: cover;
+
+
+#two-h2{
+  margin-top: 5%;
+  color: aliceblue;
 }
 
-p {
-  margin: 0;
+.profile-vid{
+  width: 40%;
+  height: 40%;
+  margin-top: auto;
+  margin-bottom: auto;
+  overflow: hidden;
+  clip-path: inset(1px 1px)
 }
 
-
-.profile-image{
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
+.intro,.about,.interest{
+  display: flex;
+  min-height: 100vh;
 }
 
-.intro{
-  align-items: center;
-  justify-content: center;
+.aoi-img-container{
+  width: 40%;
+  margin-top: auto;
+  margin-bottom: auto;
 }
 
+.aoi-img{
+  object-fit: cover;
+  width: 100%;
+  
+}
 
-.about-me{
+.about-me,.aoi{
   padding-top: 5%;
-  width: 60vw;
+  width: 60%;
+  height: 60%;
+  margin-top: auto;
+  margin-bottom: auto;
 }
 
-
-.social{
+.socials{
   margin-top: 2%;
 }
 
@@ -79,64 +91,22 @@ p {
   }
 
 .latest{
-  display: flex;
-  text-align: center;
+  display: block;
   justify-content: center;
   color: aliceblue;
-  width: 60vw;
-}
-.card  {
-  color: black;
-  height: 35vh;
-  width: 20vw;
-  background: aliceblue;
-  margin-top: 10%;
-  border-style: solid;
-  border-color: white;
-  border-radius: 5%;
-  float: right;
 }
 
-.sidebar{
-  width: 20%;
-  border-style: solid;
-  border-color: white;
-  border-radius: 10%;
-  height: 40%;
-  margin-top: 5%;
-  overflow: hidden;
+a{
+  color:aliceblue;
 }
-
-.sidebar a{
-  display:block;
-  color: white;
-  padding: 5%;
-  text-decoration: none;
-}
-.sidebar a.active {
-  background-color: #04AA6D;
-  color: white;
-}
-
-.sidebar a:hover:not(.active) {
-  background-color: white;
-  color: black;
+a:hover{
+  color: grey;
 }
 
 .card-list{
-  align-items: center;
-  width: 80%
-}
-
-.card-content{
-  position: absolute;
-  height: 40%;
+  margin-top: 2%;
+  margin-bottom: 2%;
   width: 100%;
-  top: 60%;
-  text-align: right;
-  justify-content: center;
-  padding-right: 5%;
-  z-index: 5;
 }
 
 .title{
@@ -145,86 +115,107 @@ p {
 
 }
 
-.category-pr, .category-b, .category-p, .category-t{
-  top: 5%;
-  left: 5%;
-  height: 25px;
-  position: absolute;
-  border-style: solid;
+.project-block{
+  margin-top: 2%;
+  display: flex;
+  width: 100%;
 }
 
-.category-b{
-  background-color: aqua;
+.card-content{
+  width: 70%;
+  padding-left: 3%;
+  color: black;
 }
 
-.category-p{
-  background-color: purple;
-}
-
-.category-t{
-  background-color: green;
-}
-
-.category-pr{
-  background-color: orange;
-}
-
-.category-tag{
-  background-color: black;
-  margin-left: 20px;
-  height: 100%;
-  width: 60px;
-  color: white;
-}
 
 .location, .update-time, .camera, .project-card-content{
-  color: white;
+  color: aliceblue;
   height: 25%;
 }
-
-
-
 p span{
-  background-color: black;
+  background-color: aliceblue;
   font-size: 1rem;
-}
-
-
-
-.row{
-  display: flex;
-  justify-content: center;
-}
-
-.column{
-  flex:50%;
 }
 .card-image{
   object-fit: cover;
-  height: 35vh;
-  border-radius: 5%;
+  margin-top: 2%;
+  height: 10vh;
+  width: 100%;
+}
+
+.card-image-container{
+  width: 10%;
+}
+
+.update-time{
+  display: flex;
+  width: 20%;
+  color: aliceblue;
+  height: auto;
+  align-items: center;
+  justify-content: center;
+}
+
+.sidebar > ul {
+  list-style-type: none;
+  overflow: hidden;
+  display: flex;
+  align-items: stretch;
+  justify-content: space-between;
+  margin: 0;
+  padding: 0;
+  margin-top: 5%;
+  border-bottom: 2px solid aliceblue;
+}
+.aoi-img-responsive{
+  display: none;
 }
 
 
-.card-desc {
+.sidebar > ul > li {
+  display: block;
+  text-align: center;
+  font-size: 1rem;
+  text-decoration: none;
+  width: 100%;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  height: auto;
+  color: aliceblue;
+}
+
+.sidebar li:hover {
+  background-color: #5293BB;
+  color : black;
+}
+
+@media (max-width:990px){
+  .intro,.about,.interest{
     display: block;
-    font-size: 1rem;
-    position: absolute;
-    top: 0;
-    opacity: 0;
-    padding: 18px 8%;
-    color: black;
-    background-color: aliceblue;
-    transition: 0.8s ease;
-    border-radius: 5%;
-    z-index: 10;
-    height: 35vh;
-    width:100%;
+    min-height: 100vh;
+    
+  }
+
+  .about-me,.aoi{
+    padding-top: 5%;
+    width: 100%;
+    margin-top: auto;
+    margin-bottom: auto;
+  }
+  .profile-vid{
+    width: 100%;
+    margin-top: auto;
+    margin-bottom: auto;
     overflow: hidden;
+    clip-path: inset(1px 1px)
+  }
+  .aoi-img{
+    display: none;
+  }
+  .aoi-img-responsive{
+    display:block;
+    width: 100%;
+  }
 }
 
-.card:hover .card-desc {
-    opacity: 0.9;
-    height: 35vh;
-    overflow-y:auto;
-}
+

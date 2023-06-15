@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+{% load markdown_filters %}
+
+
+{% load static %}
+{% block projectdetail_style %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/projectdetail.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'css/md.css' %}">
+{% endblock %}
+
+{% block projectdetail %}
+<div class="projectcontainer">
+    <div class="project">
+        <h1>{{ project.title }}</h1>
+        <div class="project-desc">{{ project.description }}
+        </div>
+        <div class="article-info">
+            {{ project.post_time }}&#128221;{{ readtime }}
+        </div>
+        <div class="project-box">
+            <div class="project-content">
+                {{ project.maincontent|markdown_tag }}
+            </div>
+            <div class="project-article-nav">
+                <nav id="article-nav">
+                    <ul style="list-style-type:none;">
+                        {% for heading in headings %}
+                        <li><a href="#{{ heading }}">{{heading}}</a></li>
+                        {% endfor %}
+                    </ul>
+                </nav>
+            </div>
+        </div>
+        
+    </div>
+</div>
+{% endblock %}
+
+
+{% block projectdetailscript %}
+<script defer src="{% static 'js/projectdetail.js' %}"></script>
+{%endblock%}

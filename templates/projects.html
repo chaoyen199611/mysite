@@ -1,1 +1,66 @@
 {% extends "base.html" %}
+{% load static %}
+{% block projecthome_style %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/project.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'css/forms.css' %}">
+{% endblock %}
+
+{% block projecthome %}
+<div class="project-container">
+    <div class="project-list">
+        {% for project in projects %}
+        <a href="{% url 'project-detail' project.id %}">
+            <div class="project-box">
+                <div class="project-thumbnail">
+                    <img class = "thumbnail" src="{{ project.thumbnail.url }}">
+                </div>
+                <div class="project-content">
+                    <div class="project-title">
+                        <h3>{{ project.title }}</h3>
+                    </div>
+                    <hr>
+                    <div class="project-field">{{ project.topic }}</div>
+                    <div class="project-descr">
+                        {{ project.description }}
+                    </div>
+                </div>
+                
+            </div>
+        </a>
+        {% endfor %}
+    </div>
+</div>
+
+{% if is_superuser %}
+<section id="form-section">
+    <form id="create-post" method="post" action="{% url 'project-home' %}" enctype="multipart/form-data">
+        <h2>Create Project</h2>
+        {% csrf_token %}
+        <div class="form-field">Title</div>
+        <div id="form-title">{{ form.title }}</div>
+        <div class="form-field">Category</div>
+        <div id="form-category">{{ form.category }}</div>
+        <div class="form-field">Description</div>
+        <div id="form-description">{{ form.description }}</div>
+        
+        <div class="form-field">Topic</div>
+        <div id="form-topic">{{ form.topic }}</div>
+        <div class="form-field">Thumbnail</div>
+        <div id="form-thumbnail">{{ form.thumbnail }}<span>Upload</span></div>
+        <div id="basepost-preview-img">
+            <img id="preview-image"/>
+        </div>
+
+        <div class="form-field">Main Content</div>
+        <div id="form-maincontent">{{ form.maincontent }}</div>
+        
+        <button class="button" type="submit">Submit</button>
+    </form>
+</section>
+{% endif %}
+
+{% endblock %}
+
+{% block projectpagescript %}
+<script defer src="{% static 'js/project.js' %}"></script>
+{%endblock%}
