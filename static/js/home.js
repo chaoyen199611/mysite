@@ -68,3 +68,31 @@ $(function() {
         });
     });
 });
+
+const options = {
+	rootMargin: "0px",
+    threshold: 1.0
+};
+
+const handleIntersect = (entries, observer) => {
+	entries.forEach((entry,index) => {
+		const target = entry.target;
+        console.log(target);
+		if (entry.isIntersecting) {
+			target.style.setProperty("--transition", "1.5s");
+			target.style.setProperty("--opacity", "1");
+			target.style.setProperty("--translate", "translate(0)");
+		}
+        if (index < entries.length - 1) {
+            const nextEntry = entries[index + 1];
+            if (nextEntry.intersectionRatio === 1) {
+              observer.unobserve(target);
+              observer.observe(nextEntry.target);
+            }
+        }
+	});
+};
+const intersectorSentries = document.querySelectorAll(".event");
+
+const observer = new IntersectionObserver(handleIntersect, options);
+intersectorSentries.forEach((sentry) => observer.observe(sentry));
