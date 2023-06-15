@@ -61,6 +61,16 @@ img{
     margin-top: 2%;
 }
 
+p > code {
+    font-family: "SFMono-Regular",Menlo,Consolas,"PT Mono", "Liberation Mono",Courier,monospace;
+    line-height: normal;
+    background: #363636;
+    color:#EB5757;
+    border-radius: 3px;
+    font-size: 90%;
+    padding: 0.2em 0.4em;
+}
+
 @media (max-width:990px){
     .project{
         width: 80vw;       
