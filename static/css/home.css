@@ -96,11 +96,10 @@
   color: aliceblue;
 }
 
-.post-link{
-  font-size: 1.1rem;
+a{
   color:aliceblue;
 }
-.post-link:hover{
+a:hover{
   color: grey;
 }
 
