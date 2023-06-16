@@ -25,10 +25,14 @@
   margin-bottom: auto;
 }
 
+.aoi-img-responsive{
+  display: none;
+}
+
 .aoi-img{
   object-fit: cover;
   width: 100%;
-  
+  transition-property: transform;
 }
 
 .about-me,.aoi{
@@ -99,6 +103,7 @@
 a{
   color:aliceblue;
 }
+
 a:hover{
   color: grey;
 }
@@ -167,9 +172,6 @@ p span{
   margin-top: 5%;
   border-bottom: 2px solid aliceblue;
 }
-.aoi-img-responsive{
-  display: none;
-}
 
 
 .sidebar > ul > li {
@@ -187,6 +189,16 @@ p span{
 .sidebar li:hover {
   background-color: #5293BB;
   color : black;
+}
+
+.transform-state{
+  transform-origin: left center;
+  transform: perspective(400px) rotateY(45deg) scale(1, 1);
+  transition-property: transform;
+  position: relative;
+}
+.du{
+  transition-duration: 2s;
 }
 
 @media (max-width:990px){
@@ -215,6 +227,7 @@ p span{
   .aoi-img-responsive{
     display:block;
     width: 100%;
+    transition-property: transform;
   }
 }
 
