@@ -1,3 +1,4 @@
+
 $(document).ready(function(){
     $(".homenavbar").addClass("active");
     const category = document.querySelectorAll("#post-category").forEach(function (el){
@@ -15,6 +16,7 @@ $(document).ready(function(){
             el.style.color = "#b814b2";
         }
     });
+
 });
 
 const basecard = document.querySelector(".project-block");
@@ -96,3 +98,27 @@ const intersectorSentries = document.querySelectorAll(".event");
 
 const observer = new IntersectionObserver(handleIntersect, options);
 intersectorSentries.forEach((sentry) => observer.observe(sentry));
+
+let element;
+if($('.aoi-img:visible').length == 0){
+    element = document.querySelector(".aoi-img-responsive");
+}else{
+    element = document.querySelector(".aoi-img");
+}
+
+function change() {
+    element.classList.toggle("transform-state");
+}
+  
+let imgobserver = new IntersectionObserver(function(entries) {
+    entries.forEach(function(entry) {
+        if (entry.intersectionRatio === 1) {
+            console.log(entry.target);
+            change(); // Call the function when the target object is fully in the viewport
+            imgobserver.unobserve(entry.target);
+        }
+    });
+},options);
+  
+  // Start observing the target object
+imgobserver.observe(element);

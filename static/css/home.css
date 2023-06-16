@@ -32,7 +32,7 @@
 .aoi-img{
   object-fit: cover;
   width: 100%;
-  
+  transition-property: transform;
 }
 
 .about-me,.aoi{
@@ -191,6 +191,16 @@ p span{
   color : black;
 }
 
+.transform-state{
+  transform-origin: left center;
+  transform: perspective(400px) rotateY(45deg) scale(1, 1);
+  transition-property: transform;
+  position: relative;
+}
+.du{
+  transition-duration: 2s;
+}
+
 @media (max-width:990px){
   .intro,.about,.interest{
     display: block;
@@ -217,6 +227,7 @@ p span{
   .aoi-img-responsive{
     display:block;
     width: 100%;
+    transition-property: transform;
   }
 }
 
