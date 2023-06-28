@@ -313,6 +313,9 @@ p span{
   .aoi-img-container{
     display: none;
   }
+  .popup_content{
+    width: 90%;
+  }
 }
 
 
