@@ -23,7 +23,7 @@
         </div>
     </div>
     <div class="about">
-        <div class="about-me">
+        <div class="about-me" id="aboutme">
             <h1>About Me</h1>
             <hr>
             <p>As a recent university graduate, I am still exploring and searching for the fields 
@@ -49,7 +49,14 @@
                 <a href="https://github.com/chaoyen199611" target="_blank"><img class="social-img" src="{% static 'img/github.png'%}"></a>
                 <a href="https://www.linkedin.com/in/joey-huang-9b7357189/" target="_blank"><img class="social-img" src="{% static 'img/linkedin.png'%}"></a>
                 <a href="https://www.instagram.com/chaoyen_huang/" target="_blank"><img class="social-img" src="{% static 'img/instagram.png'%}"></a>
-                <a href="#" target="_blank"><img class="social-img" src="{% static 'img/cv.png'%}"></a>
+                <a href="#popup"><img class="social-img" src="{% static 'img/cv.png'%}"></a>
+            </div>
+        </div>
+        <div class="popup" id="popup">
+            <div class="popup_content">
+              <object data="{% static 'cv.pdf'%}" type="application/pdf" width="100%" height="100%">
+              </object>
+              <a href="#aboutme" class="popup_close">&times;</a>
             </div>
         </div>
         <div id="timeline-content">
